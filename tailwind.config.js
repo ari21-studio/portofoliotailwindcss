@@ -3,7 +3,7 @@ module.exports = {
   corePlugins: {
     appearance: true,
   },
-  content: ['index-Ari-Erni.html'],
+  content: ['index.html'],
   theme: {
     container: {
       center: true,
