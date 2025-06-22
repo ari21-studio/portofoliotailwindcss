@@ -3,22 +3,22 @@ module.exports = {
   corePlugins: {
     appearance: true,
   },
-  content: ['index.html'],
+  content: ["index.html"],
   theme: {
     container: {
       center: true,
-      padding: '16px',
+      padding: "16px",
     },
     extend: {
       colors: {
-      primary: '#14b8a6',
-      secondary:'#64748b',
-      dark: '#0f172a',
+        primary: "#14b8a6",
+        secondary: "#64748b",
+        dark: "#0f172a",
       },
       screens: {
-        '2xl' : '1320px',
+        "2xl": "1320px",
       },
     },
   },
   plugins: [],
-}
+};
