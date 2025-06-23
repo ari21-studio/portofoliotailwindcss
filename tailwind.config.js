@@ -3,7 +3,7 @@ module.exports = {
   corePlugins: {
     appearance: true,
   },
-  content: ["index.html"],
+  content: ["*.html"],
   theme: {
     container: {
       center: true,

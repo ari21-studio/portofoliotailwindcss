@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <input class="appearance-none" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/output.css" rel="stylesheet" />
+    <style>
+      /* CSS kustom untuk transisi flipping */
+      .page {
+        transform-style: preserve-3d;
+        transition: transform 0.8s ease-in-out;
+        transform-origin: left center; /* Untuk membalik dari kiri */
+        backface-visibility: hidden; /* Sembunyikan sisi belakang saat tidak terbalik */
+      }
+
+      .page.flipped {
+        transform: rotateY(-180deg);
+      }
+
+      .page-front,
+      .page-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+        background-color: #4a4a4a; /* Warna default halaman */
+      }
+
+      .page-back {
+        transform: rotateY(
+          180deg
+        ); /* Balik sisi belakang agar terlihat saat halaman terbalik */
+      }
+
+      /* Styling untuk tombol navigasi */
+      .nav-button {
+        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg;
+      }
+
+      .book-container {
+        perspective: 2000px; /* Memberikan efek 3D */
+      }
+      /* Hide scrollbar */
+      #cardContainer::-webkit-scrollbar {
+        display: none;
+      }
+      #cardContainer {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <title>Website Portofolio</title>
+  </head>
+  <body class="bg-gray-100 font-inter pb-20 overflow-auto">
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#hero" class="font-bold text-lg text-primary block py-6"
+              >Arindrajaya</a
+            >
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+              ></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#Hero"
+                    class="text-base font-bold py-2 text-dark mx-8 flex group-hover:text-primary"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
+                    >About</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#clients"
+                    class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#blog"
+                    class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
+                    >Blog</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="pt-28 pb-32">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative lg:mt-9 lg:right-0">
+              <img
+                src="https://picsum.photos/600/400"
+                alt="Rumah Dijual"
+                class="w-full h-56 object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1"
+              >
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+              </div>
+              <!-- Info Harga dan Lokasi -->
+            </div>
+            <div class="p-4">
+              <h2 class="text-lg font-semibold text-green-700">
+                Rp 440.000.000
+              </h2>
+              <p class="text-sm text-gray-700 mt-1">
+                Dijual rumah murah strategis di Jakarta Timur Utan Kayu Matraman
+              </p>
+              <p class="text-sm text-gray-500 mt-1">2 KT - 2 KM - 41 m²</p>
+              <p class="text-xs text-gray-400 mt-1">
+                📍 Matraman, Jakarta Timur • 16 JUN
+              </p>
+            </div>
+            <!-- Banner -->
+            <div class="px-4">
+              <a
+                href="#"
+                class="block bg-blue-100 rounded-lg text-center py-2 text-blue-700 font-semibold text-sm"
+                >Cek 500.000 Properti Lainnya di Lamudi →</a
+              >
+            </div>
+            <!-- Detail Section -->
+            <div class="p-4 border-t text-sm text-gray-600">
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
+                <span class="text-gray-500">Tipe</span><span>Rumah</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
+                <span class="text-gray-500">Luas Bangunan</span
+                ><span>41 m²</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
+                <span class="text-gray-500">Luas Tanah</span><span>21 m²</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
+                <span class="text-gray-500">Kamar Tidur</span><span>2</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
+                <span class="text-gray-500">Kamar Mandi</span><span>2</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
+                <span class="text-gray-500">Lantai</span><span>2</span>
+              </div>
+              <div class="space-y-4 text-sm text-gray-700">
+                <!-- Fasilitas -->
+                <div>
+                  <div class="font-medium text-gray-500 mb-1">Fasilitas</div>
+                  <div
+                    class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 text-teal-800 py-1"
+                  >
+                    <div>AC</div>
+                    <div>Swimming Pool</div>
+                    <div>Carport</div>
+                    <div>Garden</div>
+                    <div>Garasi</div>
+                    <div>Water heater</div>
+                    <div>PAM</div>
+                    <div>Stove</div>
+                    <div>Microwave</div>
+                    <div>Oven</div>
+                    <div>Fire Extinguisher</div>
+                    <div>Gordyn</div>
+                  </div>
+                </div>
+
+                <!-- Sertifikasi -->
+                <div
+                  class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1"
+                >
+                  <span class="text-gray-500">Sertifikasi</span
+                  ><span>SHM - Sertifikat Hak Milik</span>
+                </div>
+
+                <!-- Alamat Lokasi -->
+                <div
+                  class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1"
+                >
+                  <span class="text-gray-500">Alamat lokasi</span
+                  ><span class="text-wrap"
+                    >South Quarter Jl. R.A. Kartini No.Kav. 8, Cilandak Bar.,<br />
+                    Kec. Cilandak, Kota Jakarta Selatan,<br />
+                    Daerah Khusus Ibukota Jakarta 12430</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Detail aset -->
+            <div
+              class="border-t pt-10 mb-10 text-sm text-gray-800 space-y-4 py-2"
+            >
+              <!-- Judul -->
+              <div>
+                <h2 class="text-lg font-bold text-gray-800 mb-2">Deskripsi</h2>
+                <p class="text-teal-900 font-medium">
+                  Disewakan Studio Full Furnished – South Quarter, Jakarta
+                </p>
+              </div>
+
+              <!-- Paragraf deskripsi -->
+              <p class="text-teal-900 leading-relaxed">
+                Unit studio nyaman dan lengkap di South Quarter Apartment,
+                Jakarta Selatan. Lokasi strategis dekat perkantoran TB
+                Simatupang dan akses mudah ke tol.
+              </p>
+
+              <!-- Harga sewa -->
+              <div class="space-y-1">
+                <p class="text-teal-900">
+                  <span class="font-semibold">Harga Sewa:</span>
+                  Rp8.000.000/bulan
+                </p>
+                <p class="text-teal-900">
+                  <span class="font-semibold">Minimal Sewa:</span> 3 bulan
+                </p>
+              </div>
+
+              <!-- Fasilitas -->
+              <div>
+                <p class="text-teal-900 font-semibold mb-1">Fasilitas Unit:</p>
+                <ul class="list-disc list-inside space-y-1 text-teal-900">
+                  <li>King Size Bed</li>
+                  <li>AC</li>
+                  <li>Meja & Kursi</li>
+                  <li>TV</li>
+                  <li>Kulkas</li>
+                  <li>Lemari Pakaian</li>
+                  <li>Mini Kitchen</li>
+                  <li>Mesin Cuci</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="w-full self-center px-4 lg:w-1/2"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <!-- tombol -->
+  <div
+    class="fixed bottom-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-inner"
+  >
+    <div class="flex border-t-4 divide-x">
+      <button
+        onclick="alert('Menghubungi via telepon...')"
+        class="w-1/2 py-3 text-green-600 font-semibold flex justify-center items-center space-x-2 hover:bg-green-50"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 5a2 2 0 012-2h3.6a1 1 0 01.92.607l1.2 2.8a1 1 0 01-.12.987l-1.6 2.133a11.042 11.042 0 005.176 5.176l2.133-1.6a1 1 0 01.987-.12l2.8 1.2A1 1 0 0121 17.4V21a2 2 0 01-2 2h-.75C8.972 23 1 15.028 1 5.75V5a2 2 0 012-2z"
+          />
+        </svg>
+        <span>Telepon</span>
+      </button>
+      <button
+        onclick="alert('Membuka chat...')"
+        class="w-1/2 py-3 text-blue-600 font-semibold flex justify-center items-center space-x-2 hover:bg-blue-50"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+          />
+        </svg>
+        <span>Chat</span>
+      </button>
+    </div>
+  </div>
+  <script src="src/js/script.js"></script>
+</html>
