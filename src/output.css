@@ -951,6 +951,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .list-inside {
   list-style-position: inside;
 }
@@ -1379,6 +1383,10 @@ video {
   padding-top: 10rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1676,12 +1684,6 @@ video {
   }
 }
 
-@media (max-width: 768px) {
-  .hide-under-md {
-    display: none;
-  }
-}
-
 body {
   font-family: "inter", sans-serif;
 }
@@ -1890,10 +1892,6 @@ body {
     grid-row-start: 2;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -2076,12 +2074,6 @@ body {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media(min-width:912px) {
-  .\[\@media\(min-width\:912px\)\]\:block {
-    display: block;
   }
 }
 
