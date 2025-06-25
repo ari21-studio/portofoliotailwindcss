@@ -161,8 +161,8 @@
                 <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
                 <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
               </div>
-              <!-- Info Harga dan Lokasi -->
             </div>
+            <!-- Info Harga dan Lokasi -->
             <div class="p-4">
               <h2 class="text-xl font-semibold text-green-700 lg:hidden">
                 Rp 440.000.000
@@ -170,7 +170,9 @@
               <p class="text-sm text-gray-700 mt-1 lg:hidden">
                 Dijual rumah murah strategis di Jakarta Timur Utan Kayu Matraman
               </p>
-              <p class="text-sm text-gray-500 mt-1 lg:hidden">2 KT - 2 KM - 41 m²</p>
+              <p class="text-sm text-gray-500 mt-1 lg:hidden">
+                2 KT - 2 KM - 41 m²
+              </p>
               <p class="text-xs text-gray-400 mt-1 lg:hidden">
                 📍 Matraman, Jakarta Timur • 16 JUN
               </p>
@@ -183,7 +185,7 @@
                 >Cek properti Lainnya di sini →</a
               >
             </div>
-            <!-- Detail Section -->
+            <!-- Spesifikasi rumah -->
             <div class="p-4 border-t text-sm text-gray-600">
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
                 <span class="text-gray-800 text-xl font-semibold">Detail</span>
@@ -296,9 +298,13 @@
               </div>
             </div>
           </div>
-          <div class="w-full self-start px-4 lg:w-1/4">
+          <div
+            class="hidden [@media(min-width:913px)]:block w-full self-start px-4 lg:w-1/4"
+          >
+            <!-- info harga di pojok kanan -->
             <div
-              class="hidden sm:block max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4">
+              class="max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4"
+            >
               <!-- Harga dan Info Properti -->
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
@@ -340,60 +346,57 @@
             </div>
             <!-- Penjual -->
             <div
-              class="hidden sm:block max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4 mt-5"
+              class="max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4 mt-5"
             >
-                <div class="flex-1">
-                  <div class="flex justify-between items-center">
-                    <img
-                  src="./img/rename-myfoto.png"
-                  alt="foto profil"
-                  class="w-12 h-12 rounded-full object-cover"
-                />
-                    <h3 class="font-semibold text-gray-800">
-                      Ari indra jaya
-                    </h3>
-                    <svg
-                      class="w-5 h-5 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                  <button
-                    class="mt-2 w-full flex justify-center items-center gap-2 bg-emerald-900 text-white py-2 rounded hover:bg-emerald-800 text-sm font-medium"
+              <div class="flex-1">
+                <div class="flex justify-between items-center">
+                  <img
+                    src="./img/rename-myfoto.png"
+                    alt="foto profil"
+                    class="w-12 h-12 rounded-full object-cover"
+                  />
+                  <h3 class="font-semibold text-gray-800">Ari indra jaya</h3>
+                  <svg
+                    class="w-5 h-5 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                      />
-                    </svg>
-                    Chat Dengan Penjual
-                  </button>
-                  <div
-                    class="mt-2 flex items-center gap-2 text-sm text-gray-600"
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+                <button
+                  class="mt-2 w-full flex justify-center items-center gap-2 bg-emerald-900 text-white py-2 rounded hover:bg-emerald-800 text-sm font-medium"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      class="w-4 h-4 text-gray-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10a1 1 0 001-1V6a1 1 0 00-1-1H7"
-                      />
-                    </svg>
-                    <span>** *** ****</span>
-                    <a href="https://wa.me/+62081212824344" class="text-blue-600 hover:underline"
-                      >Tampilkan nomor</a
-                    >
-                  </div>
+                    <path
+                      d="M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                    />
+                  </svg>
+                  Chat Dengan Penjual
+                </button>
+                <div class="mt-2 flex items-center gap-2 text-sm text-gray-600">
+                  <svg
+                    class="w-4 h-4 text-gray-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10a1 1 0 001-1V6a1 1 0 00-1-1H7"
+                    />
+                  </svg>
+                  <span>** *** ****</span>
+                  <a
+                    href="https://wa.me/+62081212824344"
+                    class="text-blue-600 hover:underline"
+                    >Tampilkan nomor</a
+                  >
                 </div>
               </div>
             </div>
@@ -449,52 +452,52 @@
     <!-- infinite scroll end -->
 
     <!-- tombol -->
-  <div
-    class="fixed bottom-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-inner lg:hidden"
-  >
-    <div class="flex border-t-4 divide-x">
-      <button
-        onclick="alert('Menghubungi via telepon...')"
-        class="w-1/2 py-3 text-green-600 font-semibold flex justify-center items-center space-x-2 hover:bg-green-50"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+    <div
+      class="fixed bottom-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-inner lg:hidden"
+    >
+      <div class="flex border-t-4 divide-x">
+        <button
+          onclick="alert('Menghubungi via telepon...')"
+          class="w-1/2 py-3 text-green-600 font-semibold flex justify-center items-center space-x-2 hover:bg-green-50"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 5a2 2 0 012-2h3.6a1 1 0 01.92.607l1.2 2.8a1 1 0 01-.12.987l-1.6 2.133a11.042 11.042 0 005.176 5.176l2.133-1.6a1 1 0 01.987-.12l2.8 1.2A1 1 0 0121 17.4V21a2 2 0 01-2 2h-.75C8.972 23 1 15.028 1 5.75V5a2 2 0 012-2z"
-          />
-        </svg>
-        <span>Telepon</span>
-      </button>
-      <button
-        onclick="alert('Membuka chat...')"
-        class="w-1/2 py-3 text-blue-600 font-semibold flex justify-center items-center space-x-2 hover:bg-blue-50"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 5a2 2 0 012-2h3.6a1 1 0 01.92.607l1.2 2.8a1 1 0 01-.12.987l-1.6 2.133a11.042 11.042 0 005.176 5.176l2.133-1.6a1 1 0 01.987-.12l2.8 1.2A1 1 0 0121 17.4V21a2 2 0 01-2 2h-.75C8.972 23 1 15.028 1 5.75V5a2 2 0 012-2z"
+            />
+          </svg>
+          <span>Telepon</span>
+        </button>
+        <button
+          onclick="alert('Membuka chat...')"
+          class="w-1/2 py-3 text-blue-600 font-semibold flex justify-center items-center space-x-2 hover:bg-blue-50"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-          />
-        </svg>
-        <span>Chat</span>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+            />
+          </svg>
+          <span>Chat</span>
+        </button>
+      </div>
     </div>
-  </div>
 
     <!-- Footer start -->
     <footer class="bg-dark pt-24 pb-14">
