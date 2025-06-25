@@ -207,3 +207,14 @@ document.getElementById("slideRight").onclick = () => {
   }
 };
 // infinite for js end
+
+// mengatur tampilan judul dgn beberapa karakter aja start
+const fullTitle =
+  "MA Komputer All-in-One Terbaru HD Super Tipis Intel Core i3/i5 Untuk Rumah, Belajar, Kantor, dan Hiburan - 19/22/24 Inci Gratis Mouse";
+const maxChars = 15;
+const truncated =
+  fullTitle.length > maxChars
+    ? fullTitle.slice(0, maxChars) + "..."
+    : fullTitle;
+document.getElementById("judul").textContent = truncated;
+// mengatur tampilan judul end
