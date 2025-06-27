@@ -143,10 +143,12 @@ const slideAmount = 300;
 
 const cardData = [
   {
-    title: "Judul 1",
-    image: "https://picsum.photos/600/300",
-    description: "Rumah minimalis dengan desain kontemporer.",
-    link: "/detail/1",
+    title:
+      "Ori&Ada UV⚡Smart Pet Drying Cabinet Box Dehydrator Mesin Pengering Hewan Pet UV Sterilizer Dryer Box Pengering Kucing Anjing",
+    image: "./img/clients/id-11134207-7rbk4-mb29bzi7079y64.webp",
+    logostar: "star+",
+    description: 1839000,
+    link: "https://s.shopee.co.id/9ADCTcyVLQ",
   },
   {
     title: "Judul 2",
