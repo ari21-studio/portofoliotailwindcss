@@ -39,6 +39,15 @@ body {
   }
 }
 
+/* Tambahkan dalam style */
+
+@media (max-width: 375px) {
+  #slider img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
 .navbar-fixed {
   @apply fixed z-[9999] bg-white bg-opacity-50;
   backdrop-filter: blur(5px);

@@ -149,32 +149,68 @@
         <div class="flex flex-wrap">
           <div class="w-full self-start px-4 lg:w-3/4">
             <div class="relative lg:right-0">
-              <img
-                src="https://picsum.photos/788/480"
-                alt="Rumah Dijual"
-                class="w-full h-56 lg:h-full object-cover lg:rounded-md"
-              />
-              <div
-                class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1"
-              >
-                <div class="w-2 h-2 bg-white rounded-full"></div>
-                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
-                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+              <div class="relative overflow-hidden w-full">
+                <!-- Slider Container -->
+                <div
+                  id="slider"
+                  class="flex transition-transform duration-1000 ease-in-out w-full"
+                >
+                  <img
+                    src="img/properti/perumahan-hoshi-at-harapan-indah-bekasi-image-10.jpg"
+                    class="w-full object-center px-28"
+                    alt="Slide 1"
+                  />
+                  <img
+                    src="img/properti/perumahan-hoshi-at-harapan-indah-bekasi-image-2.webp"
+                    class="w-full object-center px-28"
+                    alt="Slide 2"
+                  />
+                  <img
+                    src="img/properti/perumahan-hoshi-at-harapan-indah-bekasi-image-4.webp"
+                    class="w-full object-center px-28"
+                    alt="Slide 3"
+                  />
+                  <img
+                    src="img/properti/perumahan-hoshi-at-harapan-indah-bekasi-image-5.webp"
+                    class="w-full object-center px-28"
+                    alt="Slide 4"
+                  />
+                  <img
+                    src="img/properti/denah-cluster.jpg"
+                    class="w-full object-center px-28"
+                    alt="Slide 5"
+                  />
+                </div>
+                <!-- Tombol Kiri -->
+                <button
+                  id="prevBtn"
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                >
+                  ◀
+                </button>
+
+                <!-- Tombol Kanan -->
+                <button
+                  id="nextBtn"
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                >
+                  ▶
+                </button>
               </div>
             </div>
             <!-- Info Harga dan Lokasi -->
             <div class="p-4">
               <h2 class="text-xl font-semibold text-green-700 lg:hidden">
-                Rp 440.000.000
+                Rp 2.1 M
               </h2>
               <p class="text-sm text-gray-700 mt-1 lg:hidden">
-                Dijual rumah murah strategis di Jakarta Timur Utan Kayu Matraman
+                Cluster Hoshi H7
               </p>
               <p class="text-sm text-gray-500 mt-1 lg:hidden">
-                2 KT - 2 KM - 41 m²
+                4 KT - 3 KM - 85 m²
               </p>
               <p class="text-xs text-gray-400 mt-1 lg:hidden">
-                📍 Matraman, Jakarta Timur • 16 JUN
+                📍 Bekasi • 28 JUN '25
               </p>
             </div>
             <!-- Banner -->
@@ -195,16 +231,16 @@
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
                 <span class="text-gray-500">Luas Bangunan</span
-                ><span>41 m²</span>
+                ><span>85 m²</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Luas Tanah</span><span>21 m²</span>
+                <span class="text-gray-500">Luas Tanah</span><span>84 m²</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Kamar Tidur</span><span>2</span>
+                <span class="text-gray-500">Kamar Tidur</span><span>4</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Kamar Mandi</span><span>2</span>
+                <span class="text-gray-500">Kamar Mandi</span><span>3</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
                 <span class="text-gray-500">Lantai</span><span>2</span>
@@ -216,18 +252,18 @@
                   <div
                     class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 text-teal-800 py-1"
                   >
-                    <div>AC</div>
-                    <div>Swimming Pool</div>
-                    <div>Carport</div>
-                    <div>Garden</div>
-                    <div>Garasi</div>
-                    <div>Water heater</div>
-                    <div>PAM</div>
-                    <div>Stove</div>
-                    <div>Microwave</div>
-                    <div>Oven</div>
-                    <div>Fire Extinguisher</div>
-                    <div>Gordyn</div>
+                    <div>24 Hours Security</div>
+                    <div>BBQ Area</div>
+                    <div>CCTV 24 Jam</div>
+                    <div>Clubhouse</div>
+                    <div>Gym</div>
+                    <div>Commercial Area</div>
+                    <div>Lapangan Basket</div>
+                    <div>Lapangan Bulutangkis</div>
+                    <div>Lapangan Futsal</div>
+                    <div>Lapangan Tennis</div>
+                    <div>Lounge</div>
+                    <div>Masjid</div>
                   </div>
                 </div>
 
@@ -245,9 +281,9 @@
                 >
                   <span class="text-gray-500">Alamat lokasi</span
                   ><span class="text-wrap"
-                    >South Quarter Jl. R.A. Kartini No.Kav. 8, Cilandak Bar.,<br />
-                    Kec. Cilandak, Kota Jakarta Selatan,<br />
-                    Daerah Khusus Ibukota Jakarta 12430</span
+                    >Hoshi at Harapan Indah<br />
+                    Medan Satria,<br />
+                    Bekasi</span
                   >
                 </div>
               </div>
@@ -260,25 +296,36 @@
               <div>
                 <h2 class="text-lg font-bold text-gray-800 mb-2">Deskripsi</h2>
                 <p class="text-teal-900 font-medium">
-                  Disewakan Studio Full Furnished – South Quarter, Jakarta
+                  Hoshi at Harapan Indah terdiri dari berbagai tipe unit Rumah,
+                  yaitu:
                 </p>
               </div>
 
               <!-- Paragraf deskripsi -->
-              <p class="text-teal-900 leading-relaxed">
-                Unit studio nyaman dan lengkap di South Quarter Apartment,
-                Jakarta Selatan. Lokasi strategis dekat perkantoran TB
-                Simatupang dan akses mudah ke tol.
+              <p class="text-teal-900 leading-relaxed text-wrap">
+                • H7: Luas tanah: 84m2 Luas bangunan: 85m2 Jumlah kamar tidur: 4
+                kamar Jumlah kamar mandi: 3 kamar
+              </p>
+              <p class="text-teal-900 leading-relaxed text-wrap">
+                • H6: Luas tanah: 72m2 Luas bangunan: 71m2 Jumlah kamar tidur: 3
+                kamar Jumlah kamar mandi: 2 kamar
+              </p>
+              <p class="text-teal-900 leading-relaxed text-wrap">
+                • H5: Luas tanah: 60m2 Luas bangunan: 55m2 Jumlah kamar tidur: 3
+                kamar Jumlah kamar mandi: 2 kamar
               </p>
 
               <!-- Harga sewa -->
               <div class="space-y-1">
                 <p class="text-teal-900">
-                  <span class="font-semibold">Harga Sewa:</span>
-                  Rp8.000.000/bulan
+                  <span class="font-semibold">Harga:</span>
+                  • H7: 2,1M
                 </p>
                 <p class="text-teal-900">
-                  <span class="font-semibold">Minimal Sewa:</span> 3 bulan
+                  <span class="font-semibold">Harga:</span>• H6: 1,8M
+                </p>
+                <p class="text-teal-900">
+                  <span class="font-semibold">Harga:</span>• H5: 1,5M
                 </p>
               </div>
 
@@ -286,14 +333,14 @@
               <div>
                 <p class="text-teal-900 font-semibold mb-1">Fasilitas Unit:</p>
                 <ul class="list-disc list-inside space-y-1 text-teal-900">
-                  <li>King Size Bed</li>
-                  <li>AC</li>
-                  <li>Meja & Kursi</li>
-                  <li>TV</li>
-                  <li>Kulkas</li>
-                  <li>Lemari Pakaian</li>
-                  <li>Mini Kitchen</li>
-                  <li>Mesin Cuci</li>
+                  <li>Smart Door lock</li>
+                  <li>CCTV in Home</li>
+                  <li>Carport</li>
+                  <li>Sanitary Toto</li>
+                  <li>2200 Watt</li>
+                  <li>Homogenius Tile</li>
+                  <li>Kitchen Top</li>
+                  <li>Kusen Aluminium</li>
                 </ul>
               </div>
             </div>
@@ -303,50 +350,27 @@
           >
             <!-- info harga di pojok kanan -->
             <div
-              class="max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4"
+              class="max-w-md w-full border border-slate-400 rounded-lg shadow-sm bg-white p-4 space-y-4"
             >
               <!-- Harga dan Info Properti -->
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
                   <h2 class="text-2xl font-bold text-teal-900">
-                    Rp 1.800.000.000
+                    Rp 2.100.000.000
                   </h2>
-                  <div class="flex space-x-2 text-gray-500">
-                    <button>
-                      <svg
-                        class="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M4 12v1a8 8 0 008 8h1a8 8 0 008-8v-1" />
-                      </svg>
-                    </button>
-                    <button>
-                      <svg
-                        class="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                    </button>
-                  </div>
+                  <div class="flex space-x-2 text-gray-500"></div>
                 </div>
-                <p class="text-sm text-gray-800">3 KT - 2 KM - 70 m²</p>
-                <p class="text-sm text-gray-700">
-                  Rumah Second siap Huni Dijual Cepat
-                </p>
+                <p class="text-sm text-gray-800">4 KT - 3 KM - 85 m²</p>
+                <p class="text-sm text-gray-700">Cluster Hoshi H7</p>
                 <div class="flex justify-between text-xs text-gray-500">
-                  <span>Matraman, Jakarta Timur, Jakarta D.K.I.</span>
-                  <span>2 hari yang lalu</span>
+                  <span>Harapan indah, Bekasi</span>
+                  <span>3 bulan lalu</span>
                 </div>
               </div>
             </div>
             <!-- Penjual -->
             <div
-              class="max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4 mt-5"
+              class="max-w-md w-full border border-slate-400 rounded-lg shadow-sm bg-white p-4 space-y-4 mt-5"
             >
               <div class="flex-1">
                 <div class="flex justify-between items-center">
@@ -365,45 +389,60 @@
                     <path d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-                <button
-                  class="mt-2 w-full flex justify-center items-center gap-2 bg-emerald-900 text-white py-2 rounded hover:bg-emerald-800 text-sm font-medium"
+                <a href="https://wa.me/+6285175017119"
+                  ><button
+                    class="mt-2 w-full flex justify-center items-center gap-2 bg-emerald-900 text-white py-2 rounded hover:bg-emerald-800 text-sm font-medium"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                      />
+                    </svg>
+                    Chat Dengan Penjual
+                  </button></a
                 >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  Chat Dengan Penjual
-                </button>
-                <div class="mt-2 flex items-center gap-2 text-sm text-gray-600">
-                  <svg
-                    class="w-4 h-4 text-gray-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10a1 1 0 001-1V6a1 1 0 00-1-1H7"
-                    />
-                  </svg>
-                  <span>** *** ****</span>
-                  <a
-                    href="https://wa.me/+62081212824344"
-                    class="text-blue-600 hover:underline"
-                    >Tampilkan nomor</a
-                  >
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- js for banner start -->
+    <script>
+      const slider = document.getElementById("slider");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let currentIndex = 0;
+      const totalSlides = slider.children.length;
+
+      function updateSlide() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlide();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlide();
+      }
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      // Auto Slide
+      setInterval(nextSlide, 5000);
+    </script>
+    <!-- js for banner end -->
+
     <!-- infinite scroll start -->
     <!-- HTML Tetap Sama -->
     <section class="bg-gray-100 py-10">
