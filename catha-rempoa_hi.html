@@ -69,7 +69,7 @@
         <div class="flex items-center justify-between relative">
           <div class="px-4">
             <a
-              href="./index.html"
+              href="index.html/#hero"
               class="font-bold text-lg text-primary block py-6"
               >Arindrajaya</a
             >
@@ -149,40 +149,77 @@
         <div class="flex flex-wrap">
           <div class="w-full self-start px-4 lg:w-3/4">
             <div class="relative lg:right-0">
-              <img
-                src="https://picsum.photos/788/480"
-                alt="Rumah Dijual"
-                class="w-full h-56 lg:h-full object-cover lg:rounded-md"
-              />
-              <div
-                class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1"
-              >
-                <div class="w-2 h-2 bg-white rounded-full"></div>
-                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
-                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+              <div class="relative overflow-hidden w-full">
+                <!-- Slider Container -->
+                <div
+                  id="slider"
+                  class="flex transition-transform duration-1000 ease-in-out w-[700] h-full lg:w-[1024px]"
+                >
+                  <img
+                    src="img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
+                    class="w-full object-center lg:w-full lg:object-center lg:px-28 lg:h-[452px]"
+                    alt="Slide 1"
+                  />
+                  <img
+                    src="img/properti/kamar-tidur-utama.jpg"
+                    class="w-full object-center lg:object-center lg:h-[452px] lg:px-40 lg:ml-10"
+                    alt="Slide 2"
+                  />
+                  <img
+                    src="img/properti/kamar-tidur-anak.jpg"
+                    class="w-full object-center lg:object-center lg:px-40 lg:h-[472px] lg:ml-4"
+                    alt="Slide 3"
+                  />
+                  <img
+                    src="img/properti/siteplan-clusternavara.jpg"
+                    class="w-full object-center lg:object-center lg:px-36 lg:h-[472px]"
+                    alt="Slide 4"
+                  />
+                  <img
+                    src="img/properti/siteplan-1-clusternavara.jpg"
+                    class="w-full object-center lg:object-center lg:px-40 lg:ml-3 lg:h-[472px]"
+                    alt="Slide 5"
+                  />
+                </div>
+                <!-- Tombol Kiri -->
+                <button
+                  id="prevBtn"
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                >
+                  ◀
+                </button>
+
+                <!-- Tombol Kanan -->
+                <button
+                  id="nextBtn"
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                >
+                  ▶
+                </button>
               </div>
             </div>
             <!-- Info Harga dan Lokasi -->
             <div class="p-4">
               <h2 class="text-xl font-semibold text-green-700 lg:hidden">
-                Rp 440.000.000
+                Rp 2.212.400.000
               </h2>
               <p class="text-sm text-gray-700 mt-1 lg:hidden">
-                Dijual rumah murah strategis di Jakarta Timur Utan Kayu Matraman
+                Cluster Navara Type Navina
               </p>
-              <p class="text-sm text-gray-500 mt-1 lg:hidden">
-                2 KT - 2 KM - 41 m²
+              <p class="text-sm text-gray-500 mt-1 lg:hidden flex">
+                5 KT - 4 KM - 126 m²
               </p>
+              <p class="text-sm text-gray-500 mt-1 lg:hidden">2 Carport</p>
               <p class="text-xs text-gray-400 mt-1 lg:hidden">
-                📍 Matraman, Jakarta Timur • 16 JUN
+                📍 Bekasi • 28 Maret '25
               </p>
             </div>
             <!-- Banner -->
             <div class="px-4">
               <a
-                href="#"
+                href="kategori-affilliate.html"
                 class="block bg-blue-100 rounded-lg text-center py-2 text-blue-700 font-semibold text-sm lg:hidden"
-                >Cek properti Lainnya di sini →</a
+                >Cek kebutuhan Perlengkapan rumah disini →</a
               >
             </div>
             <!-- Spesifikasi rumah -->
@@ -195,19 +232,19 @@
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
                 <span class="text-gray-500">Luas Bangunan</span
-                ><span>41 m²</span>
+                ><span>126 m²</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Luas Tanah</span><span>21 m²</span>
+                <span class="text-gray-500">Luas Tanah</span><span>84 m²</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Kamar Tidur</span><span>2</span>
+                <span class="text-gray-500">Kamar Tidur</span><span>5</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Kamar Mandi</span><span>2</span>
+                <span class="text-gray-500">Kamar Mandi</span><span>4</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 py-1">
-                <span class="text-gray-500">Lantai</span><span>2</span>
+                <span class="text-gray-500">Lantai</span><span>3</span>
               </div>
               <div class="space-y-4 text-sm text-gray-700">
                 <!-- Fasilitas -->
@@ -216,18 +253,24 @@
                   <div
                     class="grid grid-cols-2 sm:grid-cols-3 gap-y-1 gap-x-6 text-teal-800 py-1"
                   >
-                    <div>AC</div>
+                    <div>24 Hours Security</div>
+                    <div>Green Belt</div>
+                    <div>One-Gate System</div>
+                    <div>CCTV 24 Jam</div>
+                    <div>Community Hall</div>
+                    <div>Playground</div>
+                    <div>Private Lake Cluster</div>
+                    <div>Lapangan Basket</div>
+                    <div>Outdoor Gym</div>
+                    <div>Lapangan Bulutangkis</div>
+                    <div>Lapangan Futsal</div>
+                    <div>Lapangan Tennis</div>
+                    <div>Lounge</div>
+                    <div>Masjid</div>
+                    <div>Clubhouse</div>
+                    <div>Spa & Sauna</div>
                     <div>Swimming Pool</div>
-                    <div>Carport</div>
-                    <div>Garden</div>
-                    <div>Garasi</div>
-                    <div>Water heater</div>
-                    <div>PAM</div>
-                    <div>Stove</div>
-                    <div>Microwave</div>
-                    <div>Oven</div>
-                    <div>Fire Extinguisher</div>
-                    <div>Gordyn</div>
+                    <div>Taman Tematik</div>
                   </div>
                 </div>
 
@@ -245,55 +288,87 @@
                 >
                   <span class="text-gray-500">Alamat lokasi</span
                   ><span class="text-wrap"
-                    >South Quarter Jl. R.A. Kartini No.Kav. 8, Cilandak Bar.,<br />
-                    Kec. Cilandak, Kota Jakarta Selatan,<br />
-                    Daerah Khusus Ibukota Jakarta 12430</span
+                    >Navara type navina Harapan Indah<br />
+                    Medan Satria,<br />
+                    Bekasi</span
                   >
                 </div>
               </div>
             </div>
             <!-- Detail aset -->
-            <div
-              class="border-t pt-10 mb-10 text-sm text-gray-800 space-y-4 py-2"
-            >
+            <div class="border-t pt-4 text-sm text-gray-800 space-y-4 py-2">
               <!-- Judul -->
               <div>
-                <h2 class="text-lg font-bold text-gray-800 mb-2">Deskripsi</h2>
+                <h2 class="text-lg font-bold text-gray-800">Deskripsi</h2>
+                <br />
                 <p class="text-teal-900 font-medium">
-                  Disewakan Studio Full Furnished – South Quarter, Jakarta
+                  Navara at Harapan Indah merupakan sebuah cluster terbaru yang
+                  diluncurkan oleh Harapan Indah. Navara at Harapan Indah
+                  menghadirkan konsep fasad bertema Japandi
+                  (Japanese-Scandinavian), memiliki ciri khas warna earth tone,
+                  dipadukan dengan bukaan jendela yang besar, serta ceiling
+                  plafon tinggi sehingga membuat sirkulasi udara di dalam rumah
+                  mengalir dengan baik. <br />
+                  Terletak di sebuah kawasan mandiri yaitu Harapan Indah seluas
+                  2000 hektar, di dalam kawasan ini terdapat sekolah, pasar
+                  modern, supermarket, kawasan komersial, taman bermain air,
+                  lapangan olahraga, dan halte feeder Trans Jakarta.
                 </p>
               </div>
 
               <!-- Paragraf deskripsi -->
-              <p class="text-teal-900 leading-relaxed">
-                Unit studio nyaman dan lengkap di South Quarter Apartment,
-                Jakarta Selatan. Lokasi strategis dekat perkantoran TB
-                Simatupang dan akses mudah ke tol.
+              <p class="text-teal-900 leading-relaxed text-wrap">
+                • L7 : Luas tanah: 84m2 Luas bangunan: 126m2 Jumlah kamar tidur:
+                5 kamar Jumlah kamar mandi: 4 kamar
               </p>
+              <!-- <p class="text-teal-900 leading-relaxed text-wrap">
+                • H6: Luas tanah: 72m2 Luas bangunan: 71m2 Jumlah kamar tidur: 3
+                kamar Jumlah kamar mandi: 2 kamar
+              </p>
+              <p class="text-teal-900 leading-relaxed text-wrap">
+                • H5: Luas tanah: 60m2 Luas bangunan: 55m2 Jumlah kamar tidur: 3
+                kamar Jumlah kamar mandi: 2 kamar
+              </p> -->
 
-              <!-- Harga sewa -->
-              <div class="space-y-1">
+              <!-- Harga jual -->
+              <!-- <div class="space-y-1">
                 <p class="text-teal-900">
-                  <span class="font-semibold">Harga Sewa:</span>
-                  Rp8.000.000/bulan
+                  <span class="font-semibold">Harga:</span>
+                  • H7: 2,1M
                 </p>
                 <p class="text-teal-900">
-                  <span class="font-semibold">Minimal Sewa:</span> 3 bulan
+                  <span class="font-semibold">Harga:</span>• H6: 1,8M
                 </p>
-              </div>
+                <p class="text-teal-900">
+                  <span class="font-semibold">Harga:</span>• H5: 1,5M
+                </p>
+              </div> -->
 
               <!-- Fasilitas -->
               <div>
-                <p class="text-teal-900 font-semibold mb-1">Fasilitas Unit:</p>
+                <p class="text-teal-900 font-semibold">
+                  Lokasi dan Tempat Sekitar:
+                </p>
                 <ul class="list-disc list-inside space-y-1 text-teal-900">
-                  <li>King Size Bed</li>
-                  <li>AC</li>
-                  <li>Meja & Kursi</li>
-                  <li>TV</li>
-                  <li>Kulkas</li>
-                  <li>Lemari Pakaian</li>
-                  <li>Mini Kitchen</li>
-                  <li>Mesin Cuci</li>
+                  <li>3 menit ke Masjid Raya Kota Harapan Indah</li>
+                  <li>5 menit ke RS Altius Kota Harapan Indah</li>
+                  <li>10 menit ke Transera Waterpark</li>
+                  <li>10 menit ke SMAN 10 Bekasi</li>
+                  <li>10 menit ke Rainbow Garden</li>
+                  <li>10 menit ke Sekolah BPK Penabur Kota Harapan Indah</li>
+                  <li>10 menit ke Grand Lucky Kota Harapan Indah</li>
+                  <li>10 menit ke Ramayana Kota Harapan Indah</li>
+                  <li>10 menit ke Living Plaza Kota Harapan Indah</li>
+                  <li>10 menit ke Gramedia Kota Harapan Indah</li>
+                  <li>10 menit ke Gereja Katolik Santo Albertius</li>
+                  <li>
+                    10 menit ke Uniqlo Stand Alone Store Kota Harapan Indah
+                  </li>
+                  <li>10 menit ke Halte Trans Jakarta Kota Harapan Indah</li>
+                  <li>15 menit ke Mall Grand Cakung</li>
+                  <li>15 menit ke Lulu Hypermarket</li>
+                  <li>15 menit ke Pintu Tol Cakung</li>
+                  <li>15 menit ke Future Stasiun MRT Ujung Menteng</li>
                 </ul>
               </div>
             </div>
@@ -303,50 +378,27 @@
           >
             <!-- info harga di pojok kanan -->
             <div
-              class="max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4"
+              class="max-w-md w-full border border-slate-400 rounded-lg shadow-sm bg-white p-4 space-y-4"
             >
               <!-- Harga dan Info Properti -->
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
                   <h2 class="text-2xl font-bold text-teal-900">
-                    Rp 1.800.000.000
+                    Rp 2.212.400.000
                   </h2>
-                  <div class="flex space-x-2 text-gray-500">
-                    <button>
-                      <svg
-                        class="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M4 12v1a8 8 0 008 8h1a8 8 0 008-8v-1" />
-                      </svg>
-                    </button>
-                    <button>
-                      <svg
-                        class="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                    </button>
-                  </div>
+                  <div class="flex space-x-2 text-gray-500"></div>
                 </div>
-                <p class="text-sm text-gray-800">3 KT - 2 KM - 70 m²</p>
-                <p class="text-sm text-gray-700">
-                  Rumah Second siap Huni Dijual Cepat
-                </p>
+                <p class="text-sm text-gray-800">5 KT - 4 KM - 126 m²</p>
+                <p class="text-sm text-gray-700">Cluster Navara type Navina</p>
                 <div class="flex justify-between text-xs text-gray-500">
-                  <span>Matraman, Jakarta Timur, Jakarta D.K.I.</span>
-                  <span>2 hari yang lalu</span>
+                  <span>Harapan indah, Bekasi</span>
+                  <span>3 bulan lalu</span>
                 </div>
               </div>
             </div>
             <!-- Penjual -->
             <div
-              class="max-w-md w-full border rounded-lg shadow-sm bg-white p-4 space-y-4 mt-5"
+              class="max-w-md w-full border border-slate-400 rounded-lg shadow-sm bg-white p-4 space-y-4 mt-5"
             >
               <div class="flex-1">
                 <div class="flex justify-between items-center">
@@ -365,45 +417,60 @@
                     <path d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-                <button
-                  class="mt-2 w-full flex justify-center items-center gap-2 bg-emerald-900 text-white py-2 rounded hover:bg-emerald-800 text-sm font-medium"
+                <a href="https://wa.me/+6285175017119"
+                  ><button
+                    class="mt-2 w-full flex justify-center items-center gap-2 bg-emerald-900 text-white py-2 rounded hover:bg-emerald-800 text-sm font-medium"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                      />
+                    </svg>
+                    Chat Dengan Penjual
+                  </button></a
                 >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M21 12c0 4.418-4.03 8-9 8a9.96 9.96 0 01-4.438-1.027L3 21l1.027-4.438A9.96 9.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  Chat Dengan Penjual
-                </button>
-                <div class="mt-2 flex items-center gap-2 text-sm text-gray-600">
-                  <svg
-                    class="w-4 h-4 text-gray-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10a1 1 0 001-1V6a1 1 0 00-1-1H7"
-                    />
-                  </svg>
-                  <span>** *** ****</span>
-                  <a
-                    href="https://wa.me/+62081212824344"
-                    class="text-blue-600 hover:underline"
-                    >Tampilkan nomor</a
-                  >
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- js for banner start -->
+    <script>
+      const slider = document.getElementById("slider");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      currentIndex = 1;
+      const totalSlides = slider.children.length;
+
+      function updateSlide() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlide();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlide();
+      }
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      // Auto Slide
+      setInterval(nextSlide, 5000);
+    </script>
+    <!-- js for banner end -->
+
     <!-- infinite scroll start -->
     <!-- HTML Tetap Sama -->
     <section class="bg-gray-100 py-10">
@@ -498,6 +565,143 @@
         </button>
       </div>
     </div>
+
+    <!-- Lightbox start -->
+    <!-- <div class="max-w-4xl mx-auto">
+      <!-- Gambar Utama -->
+    <!-- <div class="relative">
+        <img
+          id="mainImage"
+          src="/img/properti/navara-typenavina.jpg"
+          alt="Gambar Utama"
+          class="rounded-lg w-full object-cover h-[400px] transition duration-300 cursor-pointer"
+          onclick="openLightbox(currentIndex)"
+        />
+
+        <!-- Tombol Panah -->
+    <!-- <button
+          onclick="prevImage()"
+          class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2"
+        >
+          &#8592;
+        </button>
+        <button
+          onclick="nextImage()"
+          class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2"
+        >
+          &#8594;
+        </button>
+      </div> -->
+
+    <!-- Thumbnail -->
+    <!-- <div class="flex gap-4 overflow-x-auto mt-4">
+        <img
+          src="/img/properti/hoshi-tampak-depan.jpg"
+          class="w-24 h-16 object-cover cursor-pointer rounded border-2 border-teal-500"
+          onclick="setMainImage(0)"
+        />
+        <img
+          src="/img/properti/kamar-tidur-anak.jpg"
+          class="w-24 h-16 object-cover cursor-pointer rounded"
+          onclick="setMainImage(1)"
+        />
+        <img
+          src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
+          class="w-24 h-16 object-cover cursor-pointer rounded"
+          onclick="setMainImage(2)"
+        />
+        <img
+          src="/img/properti/ruangmakan&ruangtamu-navina.jpg"
+          class="w-24 h-16 object-cover cursor-pointer rounded"
+          onclick="setMainImage(3)"
+        />
+      </div>
+    </div> -->
+    <!-- <div
+      id="lightbox"
+      class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
+    >
+      <button
+        onclick="closeLightbox()"
+        class="absolute top-4 right-4 text-white text-3xl"
+      >
+        &times;
+      </button>
+      <button
+        onclick="prevImage(true)"
+        class="absolute left-4 text-white text-4xl"
+      >
+        &#10094;
+      </button>
+      <img
+        id="lightboxImage"
+        src=""
+        class="max-w-full max-h-[90vh] object-contain"
+      />
+      <button
+        onclick="nextImage(true)"
+        class="absolute right-4 text-white text-4xl"
+      >
+        &#10095;
+      </button>
+    </div> -->
+    <!-- <script>
+      const imageSources = [
+        "/img/properti/hoshi-tampak-depan.jpg",
+        "/img/properti/kamar-tidur-anak.jpg",
+        "/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp",
+        "/img/properti/ruangmakan&ruangtamu-navina.jpg",
+      ];
+
+      let currentIndex = 0;
+      const mainImage = document.getElementById("mainImage");
+      const thumbnails = document.querySelectorAll(
+        "img[onclick^='setMainImage']"
+      );
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      function setMainImage(index) {
+        currentIndex = index;
+        mainImage.src = imageSources[index];
+        updateThumbnailBorders();
+      }
+
+      function prevImage(inLightbox = false) {
+        currentIndex =
+          (currentIndex - 1 + imageSources.length) % imageSources.length;
+        updateImages(inLightbox);
+      }
+
+      function nextImage(inLightbox = false) {
+        currentIndex = (currentIndex + 1) % imageSources.length;
+        updateImages(inLightbox);
+      }
+
+      function updateImages(inLightbox) {
+        if (inLightbox) {
+          lightboxImage.src = imageSources[currentIndex];
+        } else {
+          setMainImage(currentIndex);
+        }
+      }
+
+      function updateThumbnailBorders() {
+        thumbnails.forEach((thumb, i) => {
+          thumb.classList.toggle("border-teal-500", i === currentIndex);
+        });
+      }
+
+      function openLightbox(index) {
+        lightbox.classList.remove("hidden");
+        lightboxImage.src = imageSources[index];
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+      }
+    </script> -->
+    <!-- Lightbox end-->
 
     <!-- Footer start -->
     <footer class="bg-dark pt-24 pb-14">
