@@ -2211,6 +2211,10 @@ body {
     width: 100%;
   }
 
+  .lg\:w-\[2000px\] {
+    width: 2000px;
+  }
+
   .lg\:max-w-full {
     max-width: 100%;
   }
@@ -2273,6 +2277,11 @@ body {
   .lg\:px-56 {
     padding-left: 14rem;
     padding-right: 14rem;
+  }
+
+  .lg\:px-80 {
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
 
   .lg\:pt-10 {
