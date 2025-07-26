@@ -149,54 +149,100 @@
         <div class="flex flex-wrap">
           <div class="w-full self-start px-4 lg:w-3/4">
             <div class="relative lg:right-0">
-              <div class="relative overflow-hidden w-full">
-                <!-- Slider Container -->
+              <!-- lightbox start -->
+              <div
+                class="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-4"
+              >
+                <!-- Gambar Besar -->
+                <div class="flex-1">
+                  <img
+                    id="main-image"
+                    src="./img/properti/Type-Navina-7x12.jpeg"
+                    h="1200"
+                    w="900"
+                    alt="Main"
+                    class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer"
+                    onclick="openLightbox(currentIndex)"
+                  />
+                </div>
+
+                <!-- Thumbnail Galeri -->
                 <div
-                  id="slider"
-                  class="flex transition-transform duration-1000 ease-in-out w-[700] h-full lg:w-[1024px]"
+                  class="w-full md:w-40 mt-4 md:mt-0 flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto"
                 >
                   <img
-                    src="./img/properti/navara-typenavina.jpg"
-                    class="w-full object-center lg:w-full lg:object-center lg:px-16 lg:h-[500px]"
-                    alt="Slide 1"
+                    src="./img/properti/Type-Navina-7x12.jpeg"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(0)"
                   />
                   <img
-                    src="./img/properti/kamar-tidur-utama.jpg"
-                    class="w-full object-center lg:object-center lg:h-[500px] lg:px-32 lg:ml-20 lg:object-cover"
-                    alt="Slide 2"
+                    src="./img/properti/navara-typenavina.jpg"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(1)"
+                  />
+                  <img
+                    src="./img//properti/kamar-tidur-utama.jpg"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(2)"
                   />
                   <img
                     src="./img/properti/kamar-tidur-anak.jpg"
-                    class="w-full object-center lg:object-center lg:px-32 lg:h-[500px] lg:object-cover"
-                    alt="Slide 3"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(3)"
                   />
                   <img
                     src="./img/properti/siteplan-clusternavara.jpg"
-                    class="w-full object-center lg:object-center lg:px-36 lg:h-[472px]"
-                    alt="Slide 4"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(4)"
                   />
                   <img
-                    src="./img/properti/siteplan-1-clusternavara.jpg"
-                    class="w-full object-center lg:object-center lg:px-40 lg:ml-3 lg:h-[472px]"
-                    alt="Slide 5"
+                    src="./img/properti/denah-cluster.jpg"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(5)"
                   />
                 </div>
-                <!-- Tombol Kiri -->
+              </div>
+              <!-- Lightbox Overlay -->
+              <div
+                id="lightbox"
+                class="hidden fixed inset-0 bg-black bg-opacity-80 z-[9999] items-center justify-center overflow-y-auto"
+              >
+                <!-- Close Button -->
                 <button
-                  id="prevBtn"
-                  class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                  class="absolute top-4 right-4 text-white text-3xl"
+                  onclick="closeLightbox()"
                 >
-                  ◀
+                  &times;
                 </button>
 
-                <!-- Tombol Kanan -->
+                <!-- Prev Button -->
                 <button
-                  id="nextBtn"
-                  class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl"
+                  onclick="prevImage()"
                 >
-                  ▶
+                  &#10094;
+                </button>
+
+                <!-- Image Wrapper -->
+                <div
+                  class="w-full flex items-center justify-center min-h-screen p-4"
+                >
+                  <img
+                    id="lightbox-img"
+                    src=""
+                    class="max-w-full md:max-w-4xl w-full max-h-[80vh] object-contain rounded shadow-xl"
+                  />
+                </div>
+
+                <!-- Next Button -->
+                <button
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl"
+                  onclick="nextImage()"
+                >
+                  &#10095;
                 </button>
               </div>
+              <!-- lightbox end-->
             </div>
             <!-- Info Harga dan Lokasi -->
             <div class="p-4">
@@ -407,7 +453,7 @@
                     alt="foto profil"
                     class="w-12 h-12 rounded-full object-cover"
                   />
-                  <h3 class="font-semibold text-gray-800">Ari indra jaya</h3>
+                  <h3 class="font-semibold text-gray-800">Mas Ari owner-jr3</h3>
                   <svg
                     class="w-5 h-5 text-gray-400"
                     fill="none"
@@ -519,7 +565,7 @@
     </section>
     <!-- infinite scroll end -->
 
-    <!-- tombol -->
+    <!-- tombol telepon & chat start-->
     <div
       class="fixed bottom-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-inner lg:hidden"
     >
@@ -566,143 +612,59 @@
         </button>
       </div>
     </div>
+    <!-- tombol telepon & chat end-->
 
-    <!-- Lightbox start -->
-    <!-- <div class="max-w-4xl mx-auto">
-      <!-- Gambar Utama -->
-    <!-- <div class="relative">
-        <img
-          id="mainImage"
-          src="/img/properti/navara-typenavina.jpg"
-          alt="Gambar Utama"
-          class="rounded-lg w-full object-cover h-[400px] transition duration-300 cursor-pointer"
-          onclick="openLightbox(currentIndex)"
-        />
-
-        <!-- Tombol Panah -->
-    <!-- <button
-          onclick="prevImage()"
-          class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2"
-        >
-          &#8592;
-        </button>
-        <button
-          onclick="nextImage()"
-          class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2"
-        >
-          &#8594;
-        </button>
-      </div> -->
-
-    <!-- Thumbnail -->
-    <!-- <div class="flex gap-4 overflow-x-auto mt-4">
-        <img
-          src="/img/properti/hoshi-tampak-depan.jpg"
-          class="w-24 h-16 object-cover cursor-pointer rounded border-2 border-teal-500"
-          onclick="setMainImage(0)"
-        />
-        <img
-          src="/img/properti/kamar-tidur-anak.jpg"
-          class="w-24 h-16 object-cover cursor-pointer rounded"
-          onclick="setMainImage(1)"
-        />
-        <img
-          src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
-          class="w-24 h-16 object-cover cursor-pointer rounded"
-          onclick="setMainImage(2)"
-        />
-        <img
-          src="/img/properti/ruangmakan&ruangtamu-navina.jpg"
-          class="w-24 h-16 object-cover cursor-pointer rounded"
-          onclick="setMainImage(3)"
-        />
-      </div>
-    </div> -->
-    <!-- <div
-      id="lightbox"
-      class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
-    >
-      <button
-        onclick="closeLightbox()"
-        class="absolute top-4 right-4 text-white text-3xl"
-      >
-        &times;
-      </button>
-      <button
-        onclick="prevImage(true)"
-        class="absolute left-4 text-white text-4xl"
-      >
-        &#10094;
-      </button>
-      <img
-        id="lightboxImage"
-        src=""
-        class="max-w-full max-h-[90vh] object-contain"
-      />
-      <button
-        onclick="nextImage(true)"
-        class="absolute right-4 text-white text-4xl"
-      >
-        &#10095;
-      </button>
-    </div> -->
-    <!-- <script>
-      const imageSources = [
-        "/img/properti/hoshi-tampak-depan.jpg",
-        "/img/properti/kamar-tidur-anak.jpg",
-        "/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp",
-        "/img/properti/ruangmakan&ruangtamu-navina.jpg",
+    <!-- Script lightbox-->
+    <script>
+      const imageList = [
+        "./img/properti/type-navina-7x12.jpeg",
+        "./img/properti/navara-typenavina.jpg",
+        "./img/properti/kamar-tidur-utama.jpg",
+        "./img/properti/kamar-tidur-anak.jpg",
+        "./img/properti/siteplan-clusternavara.jpg",
+        "./img/properti/denah-cluster.jpg",
       ];
 
       let currentIndex = 0;
-      const mainImage = document.getElementById("mainImage");
-      const thumbnails = document.querySelectorAll(
-        "img[onclick^='setMainImage']"
-      );
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImage = document.getElementById("lightboxImage");
 
-      function setMainImage(index) {
-        currentIndex = index;
-        mainImage.src = imageSources[index];
-        updateThumbnailBorders();
-      }
-
-      function prevImage(inLightbox = false) {
-        currentIndex =
-          (currentIndex - 1 + imageSources.length) % imageSources.length;
-        updateImages(inLightbox);
-      }
-
-      function nextImage(inLightbox = false) {
-        currentIndex = (currentIndex + 1) % imageSources.length;
-        updateImages(inLightbox);
-      }
-
-      function updateImages(inLightbox) {
-        if (inLightbox) {
-          lightboxImage.src = imageSources[currentIndex];
-        } else {
-          setMainImage(currentIndex);
-        }
-      }
-
-      function updateThumbnailBorders() {
-        thumbnails.forEach((thumb, i) => {
-          thumb.classList.toggle("border-teal-500", i === currentIndex);
-        });
+      function changeImage(index) {
+        currentIndex = index; // ✅ update index!
+        const newSrc = imageList[index];
+        document.getElementById("main-image").src = newSrc;
       }
 
       function openLightbox(index) {
+        currentIndex = index;
+        const lightbox = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
+
+        img.src = imageList[currentIndex];
+
+        // Tampilkan dan atur sebagai flex
         lightbox.classList.remove("hidden");
-        lightboxImage.src = imageSources[index];
+        lightbox.classList.add("flex");
       }
 
       function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+
+        // Sembunyikan dan hapus flex
         lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
       }
-    </script> -->
-    <!-- Lightbox end-->
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % imageList.length;
+        document.getElementById("lightbox-img").src = imageList[currentIndex];
+        document.getElementById("main-image").src = imageList[currentIndex];
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+        document.getElementById("lightbox-img").src = imageList[currentIndex];
+        document.getElementById("main-image").src = imageList[currentIndex];
+      }
+    </script>
 
     <!-- Footer start -->
     <footer class="bg-dark pt-24 pb-14">
