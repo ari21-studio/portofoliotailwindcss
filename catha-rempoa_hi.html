@@ -149,59 +149,119 @@
         <div class="flex flex-wrap">
           <div class="w-full self-start px-4 lg:w-3/4">
             <div class="relative lg:right-0">
-              <div class="relative overflow-hidden w-full">
-                <!-- Slider Container -->
-                <div
-                  id="slider"
-                  class="flex gap-5 transition-transform duration-1000 ease-in-out w-full h-full"
-                >
+              <!-- lightbox start -->
+              <div
+                class="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-4"
+              >
+                <!-- Gambar Besar -->
+                <div class="flex-1">
                   <img
-                    src="img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
-                    class="w-full object-center lg:w-full lg:object-cover lg:h-[700px] lg:object-center lg:px-40 md:w-full md:object-cover md:px-44"
-                    alt="Slide 1"
-                  />
-                  <img
-                    src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-7.webp"
-                    class="w-full object-center lg:w-full lg:object-cover lg:h-[700px] lg:self-center lg:px-40 md:max-w-full md:px-44"
-                    alt="Slide 2"
-                  />
-                  <img
-                    src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-16.webp"
-                    class="w-full object-center object-cover lg:w-full lg:object-cover lg:h-[700px] lg:self-center lg:px-40 md:ml-10"
-                    alt="Slide 3"
-                  />
-                  <img
-                    src="img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-15.webp"
-                    class="w-full object-center object-cover lg:w-full lg:object-cover lg:h-[700px] lg:self-center lg:px-40 md:items-center md:px-9 md:ml-14"
-                    alt="Slide 4"
-                  />
-                  <img
-                    src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-2.webp"
-                    class="w-full object-center object-cover lg:w-full lg:object-cover lg:h-[700px] lg:self-center lg:px-40 md:items-center md:px-44 md:object-cover"
-                    alt="Slide 5"
-                  />
-                  <img
-                    src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-8.webp"
-                    class="w-full object-center object-cover lg:w-full lg:object-cover lg:h-[700px] lg:self-center lg:px-40 md:items-center md:px-32 md:object-cover"
-                    alt="Slide 6"
+                    id="main-image"
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
+                    h="1200"
+                    alt="Main"
+                    class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer"
+                    onclick="openLightbox(currentIndex)"
                   />
                 </div>
-                <!-- Tombol Kiri -->
-                <button
-                  id="prevBtn"
-                  class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+
+                <!-- Thumbnail Galeri -->
+                <div
+                  class="w-full md:w-40 mt-4 md:mt-0 flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto"
                 >
-                  ◀
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(0)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-7.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(1)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-1.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(2)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-2.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(3)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-3.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(4)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-4.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(5)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-5.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(6)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-6.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(7)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-12.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(8)"
+                  />
+                  <img
+                    src="./img/properti/perumahan-catha-rempoa-tangerang-selatan-siteplan.webp"
+                    class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+                    onclick="changeImage(9)"
+                  />
+                </div>
+              </div>
+              <!-- Lightbox Overlay -->
+              <div
+                id="lightbox"
+                class="hidden fixed inset-0 bg-black bg-opacity-80 z-[9999] items-center justify-center overflow-y-auto"
+              >
+                <!-- Close Button -->
+                <button
+                  class="absolute top-4 right-4 text-white text-3xl"
+                  onclick="closeLightbox()"
+                >
+                  &times;
                 </button>
 
-                <!-- Tombol Kanan -->
+                <!-- Prev Button -->
                 <button
-                  id="nextBtn"
-                  class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full hover:bg-white"
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl"
+                  onclick="prevImage()"
                 >
-                  ▶
+                  &#10094;
+                </button>
+
+                <!-- Image Wrapper -->
+                <div
+                  class="w-full flex items-center justify-center min-h-screen p-4"
+                >
+                  <img
+                    id="lightbox-img"
+                    src=""
+                    class="max-w-full md:max-w-4xl w-full max-h-[80vh] object-contain rounded shadow-xl"
+                  />
+                </div>
+
+                <!-- Next Button -->
+                <button
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl"
+                  onclick="nextImage()"
+                >
+                  &#10095;
                 </button>
               </div>
+              <!-- lightbox end-->
             </div>
             <!-- Info Harga dan Lokasi -->
             <div class="p-4">
@@ -572,142 +632,61 @@
       </div>
     </div>
 
-    <!-- Lightbox start -->
-    <!-- <div class="max-w-4xl mx-auto">
-      <!-- Gambar Utama -->
-    <!-- <div class="relative">
-        <img
-          id="mainImage"
-          src="/img/properti/navara-typenavina.jpg"
-          alt="Gambar Utama"
-          class="rounded-lg w-full object-cover h-[400px] transition duration-300 cursor-pointer"
-          onclick="openLightbox(currentIndex)"
-        />
-
-        <!-- Tombol Panah -->
-    <!-- <button
-          onclick="prevImage()"
-          class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2"
-        >
-          &#8592;
-        </button>
-        <button
-          onclick="nextImage()"
-          class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2"
-        >
-          &#8594;
-        </button>
-      </div> -->
-
-    <!-- Thumbnail -->
-    <!-- <div class="flex gap-4 overflow-x-auto mt-4">
-        <img
-          src="/img/properti/hoshi-tampak-depan.jpg"
-          class="w-24 h-16 object-cover cursor-pointer rounded border-2 border-teal-500"
-          onclick="setMainImage(0)"
-        />
-        <img
-          src="/img/properti/kamar-tidur-anak.jpg"
-          class="w-24 h-16 object-cover cursor-pointer rounded"
-          onclick="setMainImage(1)"
-        />
-        <img
-          src="/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp"
-          class="w-24 h-16 object-cover cursor-pointer rounded"
-          onclick="setMainImage(2)"
-        />
-        <img
-          src="/img/properti/ruangmakan&ruangtamu-navina.jpg"
-          class="w-24 h-16 object-cover cursor-pointer rounded"
-          onclick="setMainImage(3)"
-        />
-      </div>
-    </div> -->
-    <!-- <div
-      id="lightbox"
-      class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50"
-    >
-      <button
-        onclick="closeLightbox()"
-        class="absolute top-4 right-4 text-white text-3xl"
-      >
-        &times;
-      </button>
-      <button
-        onclick="prevImage(true)"
-        class="absolute left-4 text-white text-4xl"
-      >
-        &#10094;
-      </button>
-      <img
-        id="lightboxImage"
-        src=""
-        class="max-w-full max-h-[90vh] object-contain"
-      />
-      <button
-        onclick="nextImage(true)"
-        class="absolute right-4 text-white text-4xl"
-      >
-        &#10095;
-      </button>
-    </div> -->
-    <!-- <script>
-      const imageSources = [
-        "/img/properti/hoshi-tampak-depan.jpg",
-        "/img/properti/kamar-tidur-anak.jpg",
-        "/img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp",
-        "/img/properti/ruangmakan&ruangtamu-navina.jpg",
+    <!-- Script lightbox-->
+    <script>
+      const imageList = [
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-9.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-general-fasad-7.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-1.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-2.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-3.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-4.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-5.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-6.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-interior-12.webp",
+        "./img/properti/perumahan-catha-rempoa-tangerang-selatan-siteplan.webp",
       ];
 
-      let currentIndex = 0;
-      const mainImage = document.getElementById("mainImage");
-      const thumbnails = document.querySelectorAll(
-        "img[onclick^='setMainImage']"
-      );
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImage = document.getElementById("lightboxImage");
+      let curIndex = 0;
 
-      function setMainImage(index) {
-        currentIndex = index;
-        mainImage.src = imageSources[index];
-        updateThumbnailBorders();
-      }
-
-      function prevImage(inLightbox = false) {
-        currentIndex =
-          (currentIndex - 1 + imageSources.length) % imageSources.length;
-        updateImages(inLightbox);
-      }
-
-      function nextImage(inLightbox = false) {
-        currentIndex = (currentIndex + 1) % imageSources.length;
-        updateImages(inLightbox);
-      }
-
-      function updateImages(inLightbox) {
-        if (inLightbox) {
-          lightboxImage.src = imageSources[currentIndex];
-        } else {
-          setMainImage(currentIndex);
-        }
-      }
-
-      function updateThumbnailBorders() {
-        thumbnails.forEach((thumb, i) => {
-          thumb.classList.toggle("border-teal-500", i === currentIndex);
-        });
+      function changeImage(index) {
+        currentIndex = index; // ✅ update index!
+        const newSrc = imageList[index];
+        document.getElementById("main-image").src = newSrc;
       }
 
       function openLightbox(index) {
+        currentIndex = index;
+        const lightbox = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
+
+        img.src = imageList[currentIndex];
+
+        // Tampilkan dan atur sebagai flex
         lightbox.classList.remove("hidden");
-        lightboxImage.src = imageSources[index];
+        lightbox.classList.add("flex");
       }
 
       function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+
+        // Sembunyikan dan hapus flex
         lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
       }
-    </script> -->
-    <!-- Lightbox end-->
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % imageList.length;
+        document.getElementById("lightbox-img").src = imageList[currentIndex];
+        document.getElementById("main-image").src = imageList[currentIndex];
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+        document.getElementById("lightbox-img").src = imageList[currentIndex];
+        document.getElementById("main-image").src = imageList[currentIndex];
+      }
+    </script>
 
     <!-- Footer start -->
     <footer class="bg-dark pt-24 pb-14">
