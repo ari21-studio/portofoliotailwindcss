@@ -18,6 +18,13 @@
     />
     <link href="src/output.css" rel="stylesheet" />
     <style>
+      @media (max-width: 374px) {
+        #slider img {
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -339,60 +346,81 @@
     </section>
     <!-- hero section finish -->
 
-    <!-- infinite scroll start -->
-    <!-- HTML Tetap Sama -->
-    <section class="bg-gray-100 py-10">
-      <div class="container mx-auto px-4 relative">
-        <h2 class="text-2xl font-bold mb-6">
-          Yuk belanja Shopee disini!
-          <a href="kategori-affilliate.html"
-            ><span
-              class="hover:text-primary hover:border hover:border-dark hover:rounded-md hover:px-5 hover:shadow-lg hover:py-1"
-              >selengkapnya→</span
-            ></a
-          >
-        </h2>
-        <!-- Tombol Geser -->
-        <button
-          id="slideLeft"
-          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow p-2 rounded-full"
-        >
-          ◀
-        </button>
-        <button
-          id="slideRight"
-          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow p-2 rounded-full"
-        >
-          ▶
-        </button>
-        <div
-          id="cardContainer"
-          class="flex overflow-x-auto space-x-4 scroll-smooth"
-        >
-          <template id="cardTemplate">
-            <div class="flex-none w-64 bg-white rounded-xl shadow-md p-4">
-              <div
-                class="aspect-[4/3] bg-gray-300 mb-4 rounded-md overflow-hidden"
-              >
-                <img
-                  src=""
-                  alt="Card image"
-                  class="w-full h-full object-cover card-image"
-                />
-              </div>
-              <h2 class="text-base font-semibold mb-2 card-title truncate"></h2>
-              <p class="text-sm text-gray-600 mb-2 card-description"></p>
-              <a
-                href="#"
-                class="text-blue-500 hover:underline text-sm card-link"
-                >Selengkapnya →</a
-              >
-            </div>
-          </template>
-        </div>
+    <!-- slider start -->
+    <section class="relative max-w-full overflow-hidden">
+      <!-- Slider Wrapper -->
+      <div
+        id="slider"
+        class="flex transition-transform duration-1000 ease-in-out w-full"
+      >
+        <!-- Slides -->
+        <img
+          src="img/properti/banner-selamatdatang.jpg"
+          class="w-full object-cover object-center lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
+          alt="Slide 1"
+        />
+        <img
+          src="/img/properti/banner-cicilan1per5.jpg"
+          class="w-full object-cover object-center lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
+          alt="Slide 2"
+        />
+        <img
+          src="/img/properti/banner-selamatdatang.jpg"
+          class="w-full object-cover lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
+          alt="Slide 3"
+        />
+        <img
+          src="img/properti/banner-cicilan1per5.jpg"
+          class="w-full object-cover lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
+          alt="Slide 4"
+        />
+        <img
+          src="/img/properti/banner-selamatdatang.jpg"
+          class="w-full object-cover lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
+          alt="Slide 5"
+        />
       </div>
+
+      <!-- Tombol Kiri -->
+      <button
+        onclick="prevSlide()"
+        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+      >
+        &#10094;
+      </button>
+
+      <!-- Tombol Kanan -->
+      <button
+        onclick="nextSlide()"
+        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+      >
+        &#10095;
+      </button>
     </section>
-    <!-- infinite scroll end -->
+    <script>
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+      let index = 0;
+
+      function updateSlider() {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      function nextSlide() {
+        index = (index + 1) % totalSlides;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      }
+
+      // Auto Slide
+      setInterval(nextSlide, 5000); // Setiap 5 detik
+    </script>
+
+    <!-- slider end -->
 
     <!-- Blog Rumah Baru section start -->
     <section id="blog" class="pt-24 pb-10 bg-slate-100 overflow-hidden">
@@ -419,7 +447,7 @@
           <!-- card-1 -->
           <div
             class="w-full relative opacity-0 animate-slide-in-left"
-            style="animation-delay: 0.4s"
+            style="animation-delay: 5s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -478,7 +506,7 @@
           <!-- card-2 -->
           <div
             class="w-full relative opacity-0 animate-slide-in-left"
-            style="animation-delay: 0.6s"
+            style="animation-delay: 6s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -537,7 +565,7 @@
           <!-- card-3 Catha Rempoa -->
           <div
             class="w-full relative opacity-0 animate-slide-in-left"
-            style="animation-delay: 0.8s"
+            style="animation-delay: 7s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -596,7 +624,7 @@
           <!-- card-4 Cluster Elora 1 lantai -->
           <div
             class="w-full relative opacity-0 animate-slide-in-left"
-            style="animation-delay: 1s"
+            style="animation-delay: 8s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -1676,6 +1704,10 @@
       });
     </script>
     <!-- Badge-2 aset lelang end -->
+
+    <!-- slider js start -->
+
+    <!-- slider js end -->
 
     <!-- Footer start -->
     <footer class="bg-dark pt-24 pb-12">
