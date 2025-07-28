@@ -18,6 +18,80 @@
     />
     <link href="src/output.css" rel="stylesheet" />
     <style>
+      @keyframes scaleUp {
+        from {
+          opacity: 0;
+          transform: scale(0.85);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .card-animate {
+        opacity: 0;
+        animation: scaleUp 0.6s ease forwards;
+      }
+      @keyframes slideBg {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes fadeInType {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid orange;
+        width: 0;
+        opacity: 0;
+        animation: fadeInType 0.5s forwards,
+          typewriter 4s steps(40, end) forwards;
+      }
+      .typewriter.delay-2s {
+        animation-delay: 2s, 2s;
+      }
+
+      .typewriter.delay-3_5s {
+        animation-delay: 3.5s, 3.5s;
+      }
+
+      .letter-anim span {
+        display: inline-block;
+        animation: floatUp 0.6s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes floatUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
       @media (max-width: 374px) {
         #slider img {
           height: 200px;
@@ -135,7 +209,7 @@
         white-space: nowrap;
         margin: 0 auto;
         letter-spacing: 0.05em;
-        animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+        animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
       }
 
       @keyframes typing {
@@ -346,81 +420,103 @@
     </section>
     <!-- hero section finish -->
 
-    <!-- slider start -->
-    <section class="relative max-w-full overflow-hidden">
-      <!-- Slider Wrapper -->
-      <div
-        id="slider"
-        class="flex transition-transform duration-1000 ease-in-out w-full"
-      >
-        <!-- Slides -->
-        <img
-          src="img/properti/banner-selamatdatang.jpg"
-          class="w-full object-cover object-center lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
-          alt="Slide 1"
-        />
-        <img
-          src="/img/properti/banner-cicilan1per5.jpg"
-          class="w-full object-cover object-center lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
-          alt="Slide 2"
-        />
-        <img
-          src="/img/properti/banner-selamatdatang.jpg"
-          class="w-full object-cover lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
-          alt="Slide 3"
-        />
-        <img
-          src="img/properti/banner-cicilan1per5.jpg"
-          class="w-full object-cover lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
-          alt="Slide 4"
-        />
-        <img
-          src="/img/properti/banner-selamatdatang.jpg"
-          class="w-full object-cover lg:w-96 lg:h-96 lg:object-cover lg:p-5 lg:object-center"
-          alt="Slide 5"
-        />
+    <!-- section banner start -->
+    <section>
+      <div class="w-full overflow-hidden">
+        <div class="relative w-full h-[350px] flex items-center justify-center">
+          <div
+            class="absolute w-full h-full -z-10"
+            style="
+              background-color: #14b8a6;
+              animation: slideBg 10s linear infinite;
+            "
+          ></div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4 w-full max-w-screen-xl"
+          >
+            <!-- Repeatable Banner -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-start">
+              <p
+                class="font-bold text-center text-lg typewriter text-[8px] md:text-[11.3px] lg:text-[14.7px]"
+              >
+                “Wah ada customer keren datang!
+              </p>
+              <h1
+                class="text-4xl font-bold mt-2 letter-anim text-center"
+                id="welcomeTitle"
+              >
+                <!-- Welcome word with span -->
+                <span style="color: #2563eb">W</span
+                ><span style="color: #8b5cf6">e</span
+                ><span style="color: #d97706">l</span
+                ><span style="color: #eab308">c</span
+                ><span style="color: #dc2626">o</span
+                ><span style="color: #ef4444">m</span
+                ><span style="color: #1f2937">e</span
+                ><span style="color: #000">!</span>
+              </h1>
+
+              <p
+                class="mt-4 font-medium typewriter text-[23px] md:text-[15px] lg:text-[19.5px]"
+                style="animation-delay: 2s"
+              >
+                lagi cari rumah <span class="text-red-500">Murah</span> tapi
+              </p>
+              <p
+                class="font-medium typewriter text-[18.3px] md:text-[11.5px] lg:text-[15.3px]"
+                style="animation-delay: 7s"
+              >
+                gk bikin kamu seperti Sapi
+                <span class="text-red-500">Perah</span>?
+              </p>
+            </div>
+
+            <!-- Tambahkan card lainnya untuk grid -->
+            <div
+              class="bg-white rounded-lg shadow-md p-6 text-start hidden sm:block"
+            >
+              <p
+                class="mt-4 font-medium typewriter lg:text-[16.5px] md:text-[12.6px]"
+                style="animation-delay: 12s"
+              >
+                Tenang, disini kamu bisa dapat
+              </p>
+              <p
+                class="font-medium typewriter lg:text-[19.5px] md:text-[14.5px]"
+                style="animation-delay: 17s"
+              >
+                Rumah lelang tanpa drama
+              </p>
+              <p
+                class="font-medium typewriter animate-bounce md:text-[20px] lg:text-[20px]"
+                style="animation-delay: 22s"
+              >
+                berkepanjangan!
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-lg shadow-md p-6 text-center hidden sm:block"
+            >
+              <!-- Clone isi dari card pertama jika ingin seragam -->
+            </div>
+            <div
+              class="bg-white rounded-lg shadow-md p-6 text-center hidden lg:block"
+            >
+              <!-- Clone isi dari card pertama jika ingin seragam -->
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Tombol Kiri -->
-      <button
-        onclick="prevSlide()"
-        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-      >
-        &#10094;
-      </button>
-
-      <!-- Tombol Kanan -->
-      <button
-        onclick="nextSlide()"
-        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-      >
-        &#10095;
-      </button>
     </section>
     <script>
-      const slider = document.getElementById("slider");
-      const totalSlides = slider.children.length;
-      let index = 0;
-
-      function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
-      }
-
-      function nextSlide() {
-        index = (index + 1) % totalSlides;
-        updateSlider();
-      }
-
-      function prevSlide() {
-        index = (index - 1 + totalSlides) % totalSlides;
-        updateSlider();
-      }
-
-      // Auto Slide
-      setInterval(nextSlide, 5000); // Setiap 5 detik
+      // Animasi huruf Welcome muncul naik satu-satu
+      const spans = document.querySelectorAll("#welcomeTitle span");
+      spans.forEach((span, i) => {
+        span.style.animationDelay = `${i * 0.15}s`;
+      });
     </script>
-
-    <!-- slider end -->
+    <!-- section banner end -->
 
     <!-- Blog Rumah Baru section start -->
     <section id="blog" class="pt-24 pb-10 bg-slate-100 overflow-hidden">
@@ -779,7 +875,7 @@
           class="grid grid-cols-2 gap-2 md:grid-cols-3 md:p-1 xl:grid-cols-5"
         >
           <!-- card-1 -->
-          <div class="w-full relative">
+          <div class="w-full relative card-animate" style="animation-delay: 9s">
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -824,7 +920,10 @@
             </div>
           </div>
           <!-- card-2 -->
-          <div class="w-full relative">
+          <div
+            class="w-full relative card-animate"
+            style="animation-delay: 10s"
+          >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -871,7 +970,10 @@
             </div>
           </div>
           <!-- card-3 -->
-          <div class="w-full relative">
+          <div
+            class="w-full relative card-animate"
+            style="animation-delay: 11s"
+          >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -918,7 +1020,10 @@
             </div>
           </div>
           <!-- card-4 -->
-          <div class="w-full relative">
+          <div
+            class="w-full relative card-animate"
+            style="animation-delay: 12s"
+          >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -965,7 +1070,10 @@
             </div>
           </div>
           <!-- card-5 -->
-          <div class="w-full relative">
+          <div
+            class="w-full relative card-animate"
+            style="animation-delay: 13s"
+          >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -1021,7 +1129,10 @@
             </div>
           </div>
           <!-- card-6 -->
-          <div class="w-full relative">
+          <div
+            class="w-full relative card-animate"
+            style="animation-delay: 14s"
+          >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
