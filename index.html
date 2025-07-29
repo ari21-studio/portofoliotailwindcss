@@ -345,13 +345,6 @@
                 </li>
                 <li class="group">
                   <a
-                    href="#blog"
-                    class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
-                    >Blog</a
-                  >
-                </li>
-                <li class="group">
-                  <a
                     href="#contact"
                     class="text-base py-2 text-dark mx-8 flex group-hover:text-primary"
                     >Contact</a
@@ -422,31 +415,38 @@
 
     <!-- Menu Kategori Start-->
     <div
-      class="w-full md:w-40 mt-4 p-4 md:mt-0 flex md:flex-row gap-2 overflow-x-auto md:overflow-y-auto lg:flex-row lg:w-full lg:overflow-x-auto lg:overflow-y-hidden lg:justify-center"
+      class="w-full md:w-full md:justify-center p-4 bg-slate-100 md:mt-0 flex md:flex-row gap-2 overflow-x-auto lg:flex-row lg:w-full lg:overflow-x-auto lg:overflow-y-hidden lg:justify-center"
     >
       <h4
-        class="font-semibold text-lg text-dark text-[10px] animate__animated animate__fadeInDown animatedelay-1s"
+        class="font-semibold text-dark self-center text-[10px] pr-5 lg:text-[20px] animate__animated animate__fadeInDown animatedelay-2s md:self-center"
       >
-        Telusuri Kategori
+        Telusuri<span
+          class="flex text-blue-600 font-extrabold lg:text-3xl md:text-xl"
+        >
+          Kategori</span
+        >
       </h4>
+
       <!-- rumah baru -->
       <div class="flex flex-col">
         <a href="#rumah-baru">
           <img
-            src="svg-kategori/house-user-svgrepo-com.svg"
+            src="/svg-kategori/house-user-svgrepo-com.svg"
             class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
         /></a>
-        <p class="text-[7px] text-dark font-semibold text-center">Rumah Baru</p>
+        <p class="text-[7px] text-dark font-semibold text-center lg:text-[9px]">
+          Rumah Baru
+        </p>
       </div>
 
       <!-- rumah second -->
       <div class="flex flex-col">
         <a href="#rumah-secondary">
           <img
-            src="svg-kategori/house-window-svgrepo-com.svg"
+            src="/svg-kategori/house-window-svgrepo-com.svg"
             class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
         /></a>
-        <p class="text-[7px] text-dark font-semibold text-center">
+        <p class="text-[7px] text-dark font-semibold text-center lg:text-[9px]">
           Rumah Secondary
         </p>
       </div>
@@ -455,10 +455,10 @@
       <div class="flex flex-col">
         <a href="#rumah-lelang">
           <img
-            src="svg-kategori/house-flag-svgrepo-com.svg"
+            src="/svg-kategori/house-flag-svgrepo-com.svg"
             class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
         /></a>
-        <p class="text-[7px] text-dark font-semibold text-center">
+        <p class="text-[7px] text-dark font-semibold text-center lg:text-[9px]">
           Rumah Lelang
         </p>
       </div>
@@ -467,10 +467,10 @@
       <div class="flex flex-col">
         <a href="kategori-affilliate.html">
           <img
-            src="svg-kategori/link-alt-1-svgrepo-com.svg"
+            src="/svg-kategori/link-alt-1-svgrepo-com.svg"
             class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
         /></a>
-        <p class="text-[7px] text-dark font-semibold text-center">
+        <p class="text-[7px] text-dark font-semibold text-center lg:text-[9px]">
           Perlengkapan Rumah
         </p>
       </div>
@@ -479,10 +479,10 @@
       <div class="flex flex-col">
         <a href="kategori-affilliate.html">
           <img
-            src="svg-kategori/link-alt-1-svgrepo-com.svg"
+            src="/svg-kategori/link-alt-1-svgrepo-com.svg"
             class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
         /></a>
-        <p class="text-[7px] text-dark font-semibold text-center">
+        <p class="text-[7px] text-dark font-semibold text-center lg:text-[9px]">
           Perlengkapan Rumah
         </p>
       </div>
@@ -1639,21 +1639,6 @@
       </div>
     </div>
     <!-- Client section end -->
-
-    <!-- Buku Virtual Start -->
-    <div
-      class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4"
-    >
-      <h1 class="text-4xl font-bold mb-8 text-gray-800">Buku Kisahku</h1>
-      <div
-        class="book-container relative w-[300px] h-[450px] flex items-center justify-center"
-      ></div>
-      <div class="flex mt-8 space-x-4">
-        <button id="prevPage" class="nav-button">Halaman Sebelumnya</button>
-        <button id="nextPage" class="nav-button">Halaman Berikutnya</button>
-      </div>
-    </div>
-    <!-- Buku Virtual End -->
 
     <!-- Contact section start -->
     <section class="pt-24 pb-10" id="contact">
