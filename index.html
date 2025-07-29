@@ -201,7 +201,7 @@
       }
 
       .animate-slide-in-left {
-        animation: slideInLeftFade 0.7s ease-out forwards;
+        animation: slideInLeftFade 1s ease-out forwards;
       }
       .typewriter h2 {
         overflow: hidden;
@@ -420,6 +420,75 @@
     </section>
     <!-- hero section finish -->
 
+    <!-- Menu Kategori Start-->
+    <div
+      class="w-full md:w-40 mt-4 p-4 md:mt-0 flex md:flex-row gap-2 overflow-x-auto md:overflow-y-auto lg:flex-row lg:w-full lg:overflow-x-auto lg:overflow-y-hidden lg:justify-center"
+    >
+      <h4
+        class="font-semibold text-lg text-dark text-[10px] animate__animated animate__fadeInDown animatedelay-1s"
+      >
+        Telusuri Kategori
+      </h4>
+      <!-- rumah baru -->
+      <div class="flex flex-col">
+        <a href="#rumah-baru">
+          <img
+            src="svg-kategori/house-user-svgrepo-com.svg"
+            class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+        /></a>
+        <p class="text-[7px] text-dark font-semibold text-center">Rumah Baru</p>
+      </div>
+
+      <!-- rumah second -->
+      <div class="flex flex-col">
+        <a href="#rumah-secondary">
+          <img
+            src="svg-kategori/house-window-svgrepo-com.svg"
+            class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+        /></a>
+        <p class="text-[7px] text-dark font-semibold text-center">
+          Rumah Secondary
+        </p>
+      </div>
+
+      <!-- rumah lelang -->
+      <div class="flex flex-col">
+        <a href="#rumah-lelang">
+          <img
+            src="svg-kategori/house-flag-svgrepo-com.svg"
+            class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+        /></a>
+        <p class="text-[7px] text-dark font-semibold text-center">
+          Rumah Lelang
+        </p>
+      </div>
+
+      <!-- link afilliate -->
+      <div class="flex flex-col">
+        <a href="kategori-affilliate.html">
+          <img
+            src="svg-kategori/link-alt-1-svgrepo-com.svg"
+            class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+        /></a>
+        <p class="text-[7px] text-dark font-semibold text-center">
+          Perlengkapan Rumah
+        </p>
+      </div>
+
+      <!-- link afilliate -->
+      <div class="flex flex-col">
+        <a href="kategori-affilliate.html">
+          <img
+            src="svg-kategori/link-alt-1-svgrepo-com.svg"
+            class="thumbnail w-20 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
+        /></a>
+        <p class="text-[7px] text-dark font-semibold text-center">
+          Perlengkapan Rumah
+        </p>
+      </div>
+    </div>
+    <!-- Menu Kategori end-->
+
     <!-- section banner start -->
     <section>
       <div class="w-full overflow-hidden">
@@ -519,7 +588,7 @@
     <!-- section banner end -->
 
     <!-- Blog Rumah Baru section start -->
-    <section id="blog" class="pt-24 pb-10 bg-slate-100 overflow-hidden">
+    <section id="rumah-baru" class="pt-24 pb-10 bg-slate-100 overflow-hidden">
       <div class="container">
         <div class="w-full px-10">
           <div class="max-w-xl mx-auto text-center mb-16">
@@ -782,7 +851,10 @@
     <!-- Blog section end -->
 
     <!-- Blog Rumah Second section start -->
-    <section id="blog" class="pt-10 pb-10 bg-slate-100">
+    <section
+      id="rumah-secondary"
+      class="pt-24 pb-10 bg-slate-100 mt-10 overflow-hidden"
+    >
       <div class="container">
         <div class="w-full px-10">
           <div class="max-w-xl mx-auto text-center mb-16">
@@ -798,7 +870,7 @@
           class="grid grid-cols-2 gap-2 md:grid-cols-3 md:p-1 xl:grid-cols-5"
         >
           <!-- card-1 -->
-          <div class="w-full relative">
+          <div class="w-full relative card-animate" style="animation-delay: 9s">
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -859,7 +931,10 @@
     <!-- Blog section end -->
 
     <!-- Blog Rumah Lelang section start -->
-    <section id="blog" class="pt-10 pb-10 bg-slate-100">
+    <section
+      id="rumah-lelang"
+      class="pt-24 pb-10 bg-slate-100 mt-10 overflow-hidden"
+    >
       <div class="container">
         <div class="w-full px-10">
           <div class="max-w-xl mx-auto text-center mb-16">
@@ -875,7 +950,10 @@
           class="grid grid-cols-2 gap-2 md:grid-cols-3 md:p-1 xl:grid-cols-5"
         >
           <!-- card-1 -->
-          <div class="w-full relative card-animate" style="animation-delay: 9s">
+          <div
+            class="w-full relative card-animate"
+            style="animation-delay: 10s"
+          >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
             >
@@ -922,7 +1000,7 @@
           <!-- card-2 -->
           <div
             class="w-full relative card-animate"
-            style="animation-delay: 10s"
+            style="animation-delay: 11s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -972,7 +1050,7 @@
           <!-- card-3 -->
           <div
             class="w-full relative card-animate"
-            style="animation-delay: 11s"
+            style="animation-delay: 12s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -1022,7 +1100,7 @@
           <!-- card-4 -->
           <div
             class="w-full relative card-animate"
-            style="animation-delay: 12s"
+            style="animation-delay: 13s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -1072,7 +1150,7 @@
           <!-- card-5 -->
           <div
             class="w-full relative card-animate"
-            style="animation-delay: 13s"
+            style="animation-delay: 14s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -1131,7 +1209,7 @@
           <!-- card-6 -->
           <div
             class="w-full relative card-animate"
-            style="animation-delay: 14s"
+            style="animation-delay: 15s"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-md border border-slate-400"
@@ -1640,128 +1718,6 @@
     </section>
     <!-- contact section end -->
 
-    <!-- lightbox start -->
-    <div class="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-4">
-      <!-- Gambar Besar -->
-      <div class="flex-1">
-        <img
-          id="main-image"
-          src="https://picsum.photos/id/1015/800/600"
-          alt="Main"
-          class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer"
-          onclick="openLightbox(currentIndex)"
-        />
-      </div>
-
-      <!-- Thumbnail Galeri -->
-      <div
-        class="w-full md:w-40 mt-4 md:mt-0 flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto"
-      >
-        <img
-          src="https://picsum.photos/id/1015/800/600"
-          class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
-          onclick="changeImage(0)"
-        />
-        <img
-          src="https://picsum.photos/id/1016/800/600"
-          class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
-          onclick="changeImage(1)"
-        />
-        <img
-          src="https://picsum.photos/id/1018/800/600"
-          class="thumbnail w-24 h-16 object-cover rounded-md cursor-pointer ring-2 ring-transparent hover:ring-blue-400"
-          onclick="changeImage(2)"
-        />
-      </div>
-    </div>
-    <!-- Lightbox Overlay -->
-    <div
-      id="lightbox"
-      class="hidden fixed inset-0 bg-black bg-opacity-80 z-[9999] items-center justify-center overflow-y-auto"
-    >
-      <!-- Close Button -->
-      <button
-        class="absolute top-4 right-4 text-white text-3xl"
-        onclick="closeLightbox()"
-      >
-        &times;
-      </button>
-
-      <!-- Prev Button -->
-      <button
-        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl"
-        onclick="prevImage()"
-      >
-        &#10094;
-      </button>
-
-      <!-- Image Wrapper -->
-      <div class="w-full flex items-center justify-center min-h-screen p-4">
-        <img
-          id="lightbox-img"
-          src=""
-          class="max-w-full md:max-w-4xl w-full max-h-[80vh] object-contain rounded shadow-xl"
-        />
-      </div>
-
-      <!-- Next Button -->
-      <button
-        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl"
-        onclick="nextImage()"
-      >
-        &#10095;
-      </button>
-    </div>
-    <!-- Script -->
-    <script>
-      const imageList = [
-        "https://picsum.photos/id/1015/1200/900",
-        "https://picsum.photos/id/1016/1200/900",
-        "https://picsum.photos/id/1018/1200/900",
-      ];
-
-      let currentIndex = 0;
-
-      function changeImage(index) {
-        currentIndex = index; // ✅ update index!
-        const newSrc = imageList[index];
-        document.getElementById("main-image").src = newSrc;
-      }
-
-      function openLightbox(index) {
-        currentIndex = index;
-        const lightbox = document.getElementById("lightbox");
-        const img = document.getElementById("lightbox-img");
-
-        img.src = imageList[currentIndex];
-
-        // Tampilkan dan atur sebagai flex
-        lightbox.classList.remove("hidden");
-        lightbox.classList.add("flex");
-      }
-
-      function closeLightbox() {
-        const lightbox = document.getElementById("lightbox");
-
-        // Sembunyikan dan hapus flex
-        lightbox.classList.add("hidden");
-        lightbox.classList.remove("flex");
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % imageList.length;
-        document.getElementById("lightbox-img").src = imageList[currentIndex];
-        document.getElementById("main-image").src = imageList[currentIndex];
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
-        document.getElementById("lightbox-img").src = imageList[currentIndex];
-        document.getElementById("main-image").src = imageList[currentIndex];
-      }
-    </script>
-    <!-- lightbox end-->
-
     <!-- js for badge Promosi card start-->
     <script>
       // Tambahkan badge ke semua card
@@ -1816,9 +1772,23 @@
     </script>
     <!-- Badge-2 aset lelang end -->
 
-    <!-- slider js start -->
+    <!-- js for badge Promosi red card start-->
+    <script>
+      // Tambahkan badge ke semua card
+      document.querySelectorAll(".badge-contain").forEach((card) => {
+        const badge = document.createElement("badge-1");
+        badge.className =
+          "inline-block bg-red-500 text-white text-[9px] md:text-xs font-semibold px-2 py-0.5 md:px-3 md:py-1 rounded-bl-md hover:scale-95 transition-all duration-500";
+        badge.innerText = "Brand Deals";
 
-    <!-- slider js end -->
+        const wrapper = document.createElement("div");
+        wrapper.className = "absolute top-0 right-0";
+        wrapper.appendChild(badge);
+
+        card.appendChild(wrapper);
+      });
+    </script>
+    <!-- js for badge Promosi red card end-->
 
     <!-- Footer start -->
     <footer class="bg-dark pt-24 pb-12">
