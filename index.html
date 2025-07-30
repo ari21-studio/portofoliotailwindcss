@@ -924,6 +924,12 @@
       id="rumah-lelang"
       class="pt-24 pb-10 bg-slate-100 mt-10 overflow-hidden"
     >
+      <div class="absolute top-4 right-0 badge-lelang">
+        <span id="badge-2"></span>
+      </div>
+      <div id="notification-container" class="fixed top-4 right-4 space-y-2">
+        <!-- Notifikasi akan ditambahkan di sini -->
+      </div>
       <div class="container">
         <div class="w-full px-10">
           <div class="max-w-xl mx-auto text-center mb-16">
@@ -936,6 +942,7 @@
           </div>
         </div>
         <div
+          id="card-container"
           class="grid grid-cols-2 gap-2 md:grid-cols-3 md:p-1 xl:grid-cols-5"
         >
           <!-- card-1 -->
@@ -1249,6 +1256,283 @@
         </div>
       </div>
     </section>
+    <script>
+      // Fungsi untuk memformat tanggal ke WIB
+      function formatWIB(date) {
+        const options = {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "Asia/Jakarta",
+          timeZoneName: "short",
+        };
+        return new Intl.DateTimeFormat("id-ID", options)
+          .format(date)
+          .replace("pukul", "")
+          .replace(",", "");
+      }
+      // Data untuk 10 card dengan isi berbeda dan waktu berakhir manual
+      const cardData = [
+        {
+          id: "card-1",
+          photo: "./img/aset-lelang/image30-68355d3647e0f396508261.jpg",
+          title: "Rumah 2lantai di Metland Menteng",
+          price: "Rp 1.050.000.000",
+          landArea: "112 m²",
+          buildingArea: "N/A",
+          address: "Kec. Cakung, Jakarta Timur",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-30T22:18:00+07:00", // Contoh: 30 Juli 2025, 15:00 WIB
+        },
+        {
+          id: "card-2",
+          photo:
+            "./img/aset-lelang/whatsapp-image-2025-03-19-at-20-04-33-1-6877710d92609213143691.jpg",
+          title: "Rumah 2 lantai luas 273 m2 Jakarta Timur",
+          price: "Rp 1.800.000.000",
+          landArea: "273 m²",
+          buildingArea: "N/A m²",
+          address: "Kec. Jatinegara, Jakarta Timur",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-07-31T10:30+07:00", // Contoh: 1 September 2025, 10:00 WIB
+        },
+        {
+          id: "card-3",
+          photo: "./img/aset-lelang/foto-1-687070747faad411066606 (1).jpg",
+          title: "Rumah Klasik Eropa",
+          price: "Rp 2.800.000.000",
+          landArea: "305 m²",
+          buildingArea: "N/A m²",
+          address: "Kec. Kramat Jati, Jakarta Timur",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-07-31T11:00+07:00", // Contoh: 20 Agustus 2025, 12:00 WIB
+        },
+        {
+          id: "card-4",
+          photo: "./img/aset-lelang/foto-1-685c9ec8404fe763311183.jpg",
+          title: "Rumah Mewah Murah di Metland Menteng",
+          price: "Rp 2.131.200.000",
+          landArea: "299 m²",
+          buildingArea: "N/A",
+          address: "Kec. Senayan, Jakarta Selatan",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-05T10:00+07:00", // Contoh: 10 September 2025, 14:00 WIB
+        },
+        {
+          id: "card-5",
+          photo:
+            "./img/aset-lelang/whatsapp-image-2024-10-30-at-15-42-34-2-687e05a80a883314179574.jpg",
+          title: "Rumah 2 lantai kosong di Cilandak",
+          price: "Rp 2.318.400.000",
+          landArea: "112 m²",
+          buildingArea: "N/A m²",
+          address: "Kec. Cilandak, Jakarta Selatan",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-07T11:00+07:00", // Contoh: 25 Agustus 2025, 16:00 WIB
+        },
+        {
+          id: "card-6",
+          photo:
+            "./img/aset-lelang/whatsapp-image-2025-06-19-at-09-51-02-2-686661c25d3d4401748472.jpg",
+          title: "RUmah 2 lantai di Kramat Jati",
+          price: "Rp 1.744.200.000",
+          landArea: "102 m²",
+          buildingArea: "N/A m²",
+          address: "Kec. Kramat jati, Jakarta Timur",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-14T10:00+07:00", // Contoh: 5 September 2025, 09:00 WIB
+        },
+        {
+          id: "card-7",
+          photo:
+            "./img/aset-lelang/img-20220628-125051-68775dec62f1d993412968.jpg",
+          title: "Rumah Terawat Siap Huni di Duren Sawit",
+          price: "Rp 1.800.000.000",
+          landArea: "201 m²",
+          buildingArea: "N/A",
+          address: "Kec. DUren Sawit, Jakarta Timur",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-26T11:00+07:00", // Contoh: 30 Agustus 2025, 11:00 WIB
+        },
+        {
+          id: "card-8",
+          photo:
+            "./img/aset-lelang/20240131-11724pmbygpsmapcamera-6882239902b74855497910.jpg",
+          title: "Rumah Kosong 2 Lantai di Cipinang",
+          price: "Rp 1.406.520.000",
+          landArea: "135 m²",
+          buildingArea: "N/A",
+          address: "Kec. Makasar, Jakarta Timur",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-26T14:00+07:00", // Contoh: 15 September 2025, 13:00 WIB
+        },
+        {
+          id: "card-9",
+          photo: "./img/aset-lelang/20250605-141119-68529a77eba76751818606.jpg",
+          title: "Rumah jual tanah luas 98 di Kebagusan",
+          price: "Rp 696.000.000",
+          landArea: "98 m²",
+          buildingArea: "N/A",
+          address: "Kec. Pasar Minggu, Jakarta Selatan",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-26T14:30+07:00", // Contoh: 28 Agustus 2025, 17:00 WIB
+        },
+        {
+          id: "card-10",
+          photo:
+            "./img/aset-lelang/img-20250214-130124-687dcaf2ef0d1814736539.jpg",
+          title: "Rumah Rapih, Mewah di Kalibata",
+          price: "Rp 2.563.200.000",
+          landArea: "103 m²",
+          buildingArea: "N/A",
+          address: "Kec. Pancoran, Jakarta Selatan",
+          mapSvg:
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>',
+          expiryDate: "2025-08-27T14:00+07:00", // Contoh: 20 September 2025, 08:00 WIB
+        },
+      ];
+
+      // Fungsi untuk membuat card
+      function createCards() {
+        const container = document.getElementById("card-container");
+        container.innerHTML = ""; // Kosongkan container
+
+        cardData.forEach((data) => {
+          const creationTime =
+            localStorage.getItem(data.id) || new Date().toISOString();
+          const expiryTime = data.expiryDate;
+
+          // Simpan waktu pembuatan di localStorage jika belum ada
+          if (!localStorage.getItem(data.id)) {
+            localStorage.setItem(data.id, creationTime);
+          }
+
+          // Buat elemen card
+          const card = document.createElement("div");
+          card.id = data.id;
+          card.className = "bg-white p-4 rounded-lg shadow-md";
+          card.innerHTML = `
+                  <img src="${data.photo}" alt="${
+            data.title
+          }" class="w-full h-48 object-cover rounded-md mb-4">
+                  <h2 class="font-medium text-xs text-gray-600 hover:text-primary lg:text-base truncate">${
+                    data.title
+                  }</h2>
+                  <p class="text-[15px] font-semibold text-gray-900 mb-5">${
+                    data.price
+                  }</p>
+                  <p class="text-sm text-gray-600">Luas Tanah: ${
+                    data.landArea
+                  }</p>
+                  <p class="text-sm text-gray-600">Luas Bangunan: ${
+                    data.buildingArea
+                  }</p>
+                  <div class="flex items-center mt-2">
+                      ${data.mapSvg}
+                      <p class="text-sm text-gray-600 ml-2">${data.address}</p>
+                  </div>
+                  <p class="text-[9px] text-gray-600 mt-2">Dibuat pada: ${new Date(
+                    creationTime
+                  ).toLocaleString()}</p>
+                  <p class="text-[9px] text-gray-600">Berakhir pada: ${new Date(
+                    expiryTime
+                  ).toLocaleString()}</p>
+                  <p class="text-[9px] text-gray-500 mt-2">Listingan ini akan terhapus otomatis setelah waktu lelang berakhir. Anda dapat memilih Aset lelang lainnya.</p>
+              `;
+          container.appendChild(card);
+        });
+      }
+
+      // Fungsi untuk menampilkan notifikasi
+      function showNotification(cardId, title) {
+        const notificationKey = `notificationShown-${cardId}`;
+        // Cek apakah notifikasi untuk card ini sudah ditampilkan
+        if (localStorage.getItem(notificationKey)) {
+          return;
+        }
+
+        const notificationContainer = document.getElementById(
+          "notification-container"
+        );
+        const notification = document.createElement("div");
+        notification.className =
+          "bg-red-500 text-white p-2 rounded shadow-md flex items-center justify-between opacity-0 transition-opacity duration-500";
+        notification.innerHTML = `
+              <span class="text-[10px] flex">${title} akan terhapus karena waktu lelang telah berakhir,</br> hubungi admin untuk info lebih lanjut<br></span>
+              <a
+              href="https://wa.me/6285175017119?text=Halo%20Apakah%20properti%20ini%20masih%20Ada?..."
+              class="text-[10px] font-semibold text-dark bg-primary py-1 px-4 rounded-full hover:shadow-lg hover:opacity-70 transition duration-300 ease-in-out opacity-0 animate-zoom-in delay-3"
+              >Hubungi saya</a
+            >
+          `;
+        notificationContainer.appendChild(notification);
+
+        // Animasi fade-in
+        setTimeout(() => {
+          notification.classList.remove("opacity-0");
+          notification.classList.add("opacity-100");
+        }, 10);
+
+        // Tandai bahwa notifikasi sudah ditampilkan
+        localStorage.setItem(notificationKey, "true");
+      }
+
+      // Fungsi untuk memeriksa dan menghapus card
+      function checkAndRemoveExpiredCards() {
+        const notificationThresholdMs = 60000; // Notifikasi 5 detik sebelum hapus
+        const now = new Date();
+
+        cardData.forEach((data) => {
+          const creationTime = localStorage.getItem(data.id);
+          const expiryTime = new Date(data.expiryDate);
+
+          if (creationTime && expiryTime) {
+            const timeDiff = expiryTime - now;
+
+            // Tampilkan notifikasi jika mendekati waktu hapus (dalam 5 detik)
+            if (timeDiff <= notificationThresholdMs && timeDiff > 0) {
+              showNotification(data.id, data.title);
+            }
+
+            // Hapus card jika waktu berakhir telah tercapai
+            if (timeDiff <= 0) {
+              const card = document.getElementById(data.id);
+              if (card) {
+                card.classList.add(
+                  "opacity-0",
+                  "transition-opacity",
+                  "duration-500"
+                );
+                setTimeout(() => {
+                  card.remove(); // Hapus dari DOM
+                  localStorage.removeItem(data.id); // Hapus waktu pembuatan
+                  localStorage.removeItem(`notificationShown-${data.id}`); // Reset notifikasi
+                }, 500);
+              }
+            }
+          }
+        });
+      }
+
+      // Buat card dan periksa saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", () => {
+        createCards();
+        checkAndRemoveExpiredCards();
+        // Periksa setiap 1 detik
+        setInterval(checkAndRemoveExpiredCards, 1000);
+      });
+    </script>
     <!-- Blog section end -->
 
     <!-- Gallery section start -->
